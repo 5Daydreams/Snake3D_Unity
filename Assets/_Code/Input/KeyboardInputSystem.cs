@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InputSystem : MonoBehaviour
+public class KeyboardInputSystem : MonoBehaviour
 {
     [SerializeField] private InputCode[] inputList;
     private bool[] lastInputState;
