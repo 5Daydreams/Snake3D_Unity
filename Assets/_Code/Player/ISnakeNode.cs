@@ -9,4 +9,5 @@ public interface ISnakeNode
     public Queue<Vector3> WaypointList { get; set; }
 
     public ISnakeNode GetLastNode();
+    public void SetSpeed(float speed);
 }

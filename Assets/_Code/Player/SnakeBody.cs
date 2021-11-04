@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace _Code.Player
 {
     public class SnakeBody : MonoBehaviour, ISnakeNode
     {
-        public float Speed;
+        private float _speed;
         private Vector3 _currentDirection;
 
         private Queue<Vector3> _waypointList = new Queue<Vector3>();
@@ -35,6 +36,11 @@ namespace _Code.Player
             return NextNode.GetLastNode();
         }
 
+        public void SetSpeed(float speed)
+        {
+            _speed = speed;
+        }
+
         private void Update()
         {
             FollowWaypoints();
@@ -46,14 +52,15 @@ namespace _Code.Player
             {
                 return;
             }
-            
+
             Vector3 currentWaypoint = WaypointList.First();
 
             float distanceToNextWaypoint = Vector3.Distance(this.transform.position,currentWaypoint);
             
             if (distanceToNextWaypoint > WaypointDistanceThreshold)
             {
-                this.transform.position = Vector3.Lerp(this.transform.position,currentWaypoint,Time.deltaTime * Speed);
+                _currentDirection = (currentWaypoint - transform.position).normalized;
+                this.transform.position += _currentDirection * (Time.deltaTime * _speed);
             }
             else
             {

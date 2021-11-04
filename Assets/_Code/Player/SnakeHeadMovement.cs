@@ -4,11 +4,8 @@ using System.Collections.Generic;
 using _Code.Player;
 using UnityEngine;
 
-public class SnakeHeadMovement : MonoBehaviour, ISnakeNode
+public class SnakeHeadMovement : MonoBehaviour
 {
-    [Header("Child Node")] 
-    [SerializeField] private SnakeBody _firstNode;
-    
     [Header("Speed")]
     [SerializeField] private float baseSpeed;
     [SerializeField] private float boostSpeed;
@@ -19,7 +16,7 @@ public class SnakeHeadMovement : MonoBehaviour, ISnakeNode
     [SerializeField] private float verticalPivotThreshold = 65.0f;
 
     private Vector3 direction = new Vector3(0,0,1);
-    private float currentSpeed = 1.0f;
+    [HideInInspector] public float CurrentSpeed = 1.0f;
     private bool isBoosting;
 
     private float angleH = 0;
@@ -30,42 +27,12 @@ public class SnakeHeadMovement : MonoBehaviour, ISnakeNode
     private float timer = 0.0f;
     private float delayBetweenWaypointDrops = 0.0f;
 
-    public ISnakeNode NextNode
-    {
-        get => _firstNode;
-        set => _firstNode = value as SnakeBody;
-    }
-
-    public Queue<Vector3> WaypointList { get; set; }
-
-    public ISnakeNode GetLastNode()
-    {
-        if (NextNode == null)
-        {
-            return this;
-        }
-
-        return NextNode.GetLastNode();
-    }
-
-    private void Awake()
-    {
-        WaypointList = new Queue<Vector3>();
-        NextNode.WaypointList.Enqueue(this.transform.position);
-        _firstNode.Speed = this.baseSpeed * 5;
-    }
 
     private void Update()
     {
         AdjustRotation();
         AdjustPosition();
     }
-
-    public void DropWaypoint()
-    {
-        NextNode.WaypointList.Enqueue(this.transform.position);
-    }
-    
     void AdjustRotation()
     {
         direction = this.transform.rotation * Vector3.forward;
@@ -73,7 +40,7 @@ public class SnakeHeadMovement : MonoBehaviour, ISnakeNode
 
     void AdjustPosition()
     {
-        this.transform.position += direction * currentSpeed * Time.deltaTime;
+        this.transform.position += direction * CurrentSpeed * Time.deltaTime;
     }
 
     public void TurnHorizontal(float angleDir)
@@ -104,11 +71,11 @@ public class SnakeHeadMovement : MonoBehaviour, ISnakeNode
         
         if (isBoosting)
         {
-            currentSpeed = baseSpeed + boostSpeed;
+            CurrentSpeed = baseSpeed + boostSpeed;
         }
         else
         {
-            currentSpeed = baseSpeed;
+            CurrentSpeed = baseSpeed;
         }
     }
 }
