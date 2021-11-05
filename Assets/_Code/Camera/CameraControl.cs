@@ -30,5 +30,10 @@ namespace _Code.Camera
             positionOffset = Quaternion.AngleAxis(angle, Vector3.up) * basePositionOffset;
             lookOffset = Quaternion.AngleAxis(angle, Vector3.up) * baseLookOffset;
         }
+
+        public void SetTarget(Transform newTarget)
+        {
+            target = newTarget;
+        }
     }
 }

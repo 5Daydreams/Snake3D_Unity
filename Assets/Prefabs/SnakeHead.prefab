@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 118179737106214549}
   - component: {fileID: 118179737106214550}
   - component: {fileID: -5855101945133800618}
+  - component: {fileID: 6172528447260028649}
   m_Layer: 0
   m_Name: SnakeHead
   m_TagString: Untagged
@@ -95,3 +96,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markerList: []
+--- !u!114 &6172528447260028649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118179737106214545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48754ba4a0723fe498179f6b96ac8f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _awake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1d851abd9edf9f64a99a1afb8ab8e9c4, type: 2}
+        m_TargetAssemblyTypeName: _Code.CustomEvents.BaseEvent.BaseGameEvent`1[[UnityEngine.Transform,
+          UnityEngine
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 118179737106214548}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  _reset:
+    m_PersistentCalls:
+      m_Calls: []
+  _start:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDestroy:
+    m_PersistentCalls:
+      m_Calls: []

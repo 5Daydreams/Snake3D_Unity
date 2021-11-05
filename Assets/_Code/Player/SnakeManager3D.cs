@@ -7,7 +7,7 @@ namespace _Code.Player
     public class SnakeManager3D : MonoBehaviour
     {
         [SerializeField] private float distanceBetween = 0.2f;
-        [SerializeField] private List<GameObject> bodyParts = new List<GameObject>();
+        [SerializeField] private List<GameObject> bodyNodesToSpawn = new List<GameObject>();
         private List<GameObject> snakeBody = new List<GameObject>();
     
         [Header("Speed")]
@@ -43,7 +43,7 @@ namespace _Code.Player
 
         private void ManageSnakeBody()
         {
-            if (bodyParts.Count > 0)
+            if (bodyNodesToSpawn.Count > 0)
             {
                 CreateBodyParts();
             }
@@ -132,10 +132,12 @@ namespace _Code.Player
         {
             if (snakeBody.Count == 0)
             {
-                GameObject temp = Instantiate(bodyParts[0], transform.position, transform.rotation);
-            
+                GameObject temp = Instantiate(bodyNodesToSpawn[0], transform.position, transform.rotation);
+                
+                SetSpeedBoost(false);
+
                 snakeBody.Add(temp);
-                bodyParts.RemoveAt(0);
+                bodyNodesToSpawn.RemoveAt(0);
             }
 
             WaypointDropper markM = snakeBody[snakeBody.Count - 1].GetComponent<WaypointDropper>();
@@ -149,10 +151,10 @@ namespace _Code.Player
 
             if (countUp >= distanceBetween)
             {
-                GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation);
+                GameObject temp = Instantiate(bodyNodesToSpawn[0], markM.markerList[0].position, markM.markerList[0].rotation);
 
                 snakeBody.Add(temp);
-                bodyParts.RemoveAt(0);
+                bodyNodesToSpawn.RemoveAt(0);
                 temp.GetComponent<WaypointDropper>().ClearMarkerList();
                 countUp = 0;
             }
@@ -160,7 +162,7 @@ namespace _Code.Player
 
         public void AddBodyParts(GameObject gObj)
         {
-            bodyParts.Add(gObj);
+            bodyNodesToSpawn.Add(gObj);
         }
     }
 }

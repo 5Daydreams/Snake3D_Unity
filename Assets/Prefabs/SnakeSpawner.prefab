@@ -184,13 +184,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a11921cb86d46abbe363d5e01b1c275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetween: 0.8
-  bodyParts:
+  distanceBetween: 0.2
+  bodyNodesToSpawn:
   - {fileID: 118179737106214545, guid: 1b3a31f741531934da13a3c56752f279, type: 3}
   - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
-  baseSpeed: 120
-  boostSpeed: 150
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  baseSpeed: 4
+  boostSpeed: 3
   turnSpeedH: 90
   turnSpeedV: 50
   verticalPivotThreshold: 65
