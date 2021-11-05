@@ -6,7 +6,7 @@ namespace _TutorialCode
 {
     public class WaypointFollower : MonoBehaviour
     {
-        public Queue<Waypoint> WaypointList;
+        public Queue<Waypoint> WaypointList = new Queue<Waypoint>();
         private void Update()
         {
             WaypointMovement();

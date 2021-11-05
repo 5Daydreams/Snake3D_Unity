@@ -6,10 +6,22 @@ using UnityEngine;
 
 namespace _Code.Player
 {
-    public class SnakeManager3D : MonoBehaviour
+    public class SnakeManagerLL : MonoBehaviour
     {
         [SerializeField] private float distanceBetween = 0.2f;
         [SerializeField] private List<GameObject> bodyNodesToSpawn = new List<GameObject>();
+        
+        public class SnakeNode : ILListNode<SnakeNode>
+        {
+            public SnakeNode NextNode;
+            public WaypointDropper WaypointDropper;
+            
+            public SnakeNode Next()
+            {
+                return NextNode;
+            }
+        }
+
         private List<GameObject> snakeBody = new List<GameObject>();
 
         [Header("Speed")]
