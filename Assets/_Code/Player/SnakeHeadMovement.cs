@@ -23,10 +23,7 @@ public class SnakeHeadMovement : MonoBehaviour
     private float angleV = 0;
     Quaternion rotH = Quaternion.identity;
     Quaternion rotV = Quaternion.identity;
-
-    private float timer = 0.0f;
-    private float delayBetweenWaypointDrops = 0.0f;
-
+    
 
     private void Update()
     {
