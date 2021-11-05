@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6104408686189806243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6104408686189806246}
+  - component: {fileID: 6104408686189806245}
+  - component: {fileID: 6104408686189806242}
+  m_Layer: 0
+  m_Name: SnakeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6104408686189806246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104408686189806243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6104408686189806245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104408686189806243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab47161bad4f8e44b3c932a789fdc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputList:
+  - Description: SpeedUp
+    InputKey: space
+    InputHeld:
+      m_PersistentCalls:
+        m_Calls: []
+    InputTapped:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6104408686189806242}
+          m_TargetAssemblyTypeName: SnakeManager3D, Assembly-CSharp
+          m_MethodName: SetSpeedBoost
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    InputReleased:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6104408686189806242}
+          m_TargetAssemblyTypeName: SnakeManager3D, Assembly-CSharp
+          m_MethodName: SetSpeedBoost
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Description: TurnRight
+    InputKey: d
+    InputHeld:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6104408686189806242}
+          m_TargetAssemblyTypeName: SnakeManager3D, Assembly-CSharp
+          m_MethodName: TurnHorizontal
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    InputTapped:
+      m_PersistentCalls:
+        m_Calls: []
+    InputReleased:
+      m_PersistentCalls:
+        m_Calls: []
+  - Description: TurnLeft
+    InputKey: a
+    InputHeld:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6104408686189806242}
+          m_TargetAssemblyTypeName: SnakeManager3D, Assembly-CSharp
+          m_MethodName: TurnHorizontal
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: -1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    InputTapped:
+      m_PersistentCalls:
+        m_Calls: []
+    InputReleased:
+      m_PersistentCalls:
+        m_Calls: []
+  - Description: TurnUp
+    InputKey: s
+    InputHeld:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6104408686189806242}
+          m_TargetAssemblyTypeName: SnakeManager3D, Assembly-CSharp
+          m_MethodName: TurnVertical
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: -1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    InputTapped:
+      m_PersistentCalls:
+        m_Calls: []
+    InputReleased:
+      m_PersistentCalls:
+        m_Calls: []
+  - Description: TurnDown
+    InputKey: w
+    InputHeld:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6104408686189806242}
+          m_TargetAssemblyTypeName: SnakeManager3D, Assembly-CSharp
+          m_MethodName: TurnVertical
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    InputTapped:
+      m_PersistentCalls:
+        m_Calls: []
+    InputReleased:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &6104408686189806242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104408686189806243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a11921cb86d46abbe363d5e01b1c275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceBetween: 0.8
+  bodyParts:
+  - {fileID: 118179737106214545, guid: 1b3a31f741531934da13a3c56752f279, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
+  baseSpeed: 120
+  boostSpeed: 150
+  turnSpeedH: 90
+  turnSpeedV: 50
+  verticalPivotThreshold: 65
+  CurrentSpeed: 1

@@ -2,13 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeManager : MonoBehaviour
+public class SnakeManager3D : MonoBehaviour
 {
     [SerializeField] private float distanceBetween = 0.2f;
-    [SerializeField] private float speed;
-    [SerializeField] private float turnSpeed;
     [SerializeField] private List<GameObject> bodyParts = new List<GameObject>();
     private List<GameObject> snakeBody = new List<GameObject>();
+    
+    [Header("Speed")]
+    [SerializeField] private float baseSpeed;
+    [SerializeField] private float boostSpeed;
+
+    [Header("Rotation")]
+    [SerializeField] private float turnSpeedH = 90;
+    [SerializeField] private float turnSpeedV = 50;
+    [SerializeField] private float verticalPivotThreshold = 65.0f;
+
+    private Vector3 direction = new Vector3(0,0,1);
+    [HideInInspector] public float CurrentSpeed = 1.0f;
+    private bool isBoosting;
+
+    private float angleH = 0;
+    private float angleV = 0;
+    Quaternion rotH = Quaternion.identity;
+    Quaternion rotV = Quaternion.identity;
 
     private float countUp = 0;
 
@@ -48,11 +64,8 @@ public class SnakeManager : MonoBehaviour
 
     private void SnakeMovement()
     {
-        snakeBody[0].GetComponent<Rigidbody2D>().velocity = snakeBody[0].transform.right * (speed * Time.deltaTime);
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            snakeBody[0].transform.Rotate(new Vector3(0, 0, -turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal")));
-        }
+        AdjustRotation();
+        AdjustPosition();
 
         if (snakeBody.Count > 1)
         {
@@ -66,15 +79,59 @@ public class SnakeManager : MonoBehaviour
             }
         }
     }
+    
+    void AdjustRotation()
+    {
+        direction = snakeBody[0].transform.rotation * Vector3.forward;
+    }
+
+    void AdjustPosition()
+    {
+        snakeBody[0].transform.position += direction * CurrentSpeed * Time.deltaTime;
+    }
+
+    public void TurnHorizontal(float angleDir)
+    {
+        angleH += angleDir * turnSpeedH * Time.deltaTime;
+        ApplyRotationToTransform();
+    }
+    
+    public void TurnVertical(float angleDir)
+    {
+        angleV += angleDir * turnSpeedV * Time.deltaTime;
+
+        angleV = Mathf.Clamp(angleV, -verticalPivotThreshold, verticalPivotThreshold);
+        ApplyRotationToTransform();
+    }
+
+    private void ApplyRotationToTransform()
+    {
+        rotH = Quaternion.AngleAxis(angleH, Vector3.up);
+        rotV = Quaternion.AngleAxis(angleV, Vector3.right);
+
+        snakeBody[0].transform.rotation = rotH * rotV;
+    }
+    
+    public void SetSpeedBoost(bool value)
+    {
+        isBoosting = value;
+        
+        if (isBoosting)
+        {
+            CurrentSpeed = baseSpeed + boostSpeed;
+        }
+        else
+        {
+            CurrentSpeed = baseSpeed;
+        }
+    }
 
     private void CreateBodyParts()
     {
         if (snakeBody.Count == 0)
         {
-            GameObject temp = Instantiate(bodyParts[0], transform.position, transform.rotation, transform);
-
-            temp.GetComponent<Rigidbody2D>().gravityScale = 0;
-
+            GameObject temp = Instantiate(bodyParts[0], transform.position, transform.rotation);
+            
             snakeBody.Add(temp);
             bodyParts.RemoveAt(0);
         }
@@ -90,10 +147,7 @@ public class SnakeManager : MonoBehaviour
 
         if (countUp >= distanceBetween)
         {
-            GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation,
-                transform);
-
-            temp.GetComponent<Rigidbody2D>().gravityScale = 0;
+            GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation);
 
             snakeBody.Add(temp);
             bodyParts.RemoveAt(0);
