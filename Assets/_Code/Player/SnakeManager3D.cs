@@ -23,7 +23,6 @@ namespace _Code.Player
         private Vector3 direction = new Vector3(0,0,1);
         [HideInInspector] public float CurrentSpeed = 1.0f;
         private bool isBoosting;
-        private float currentDistanceBetween = 0.2f;
 
         private float angleH = 0;
         private float angleV = 0;

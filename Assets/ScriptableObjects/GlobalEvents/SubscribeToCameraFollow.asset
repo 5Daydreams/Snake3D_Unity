@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 600ff837e9761d343ac76b38bcfc0449, type: 3}
-  m_Name: SubscribeToCamera
+  m_Name: SubscribeToCameraFollow
   m_EditorClassIdentifier: 
