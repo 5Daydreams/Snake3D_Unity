@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-
-public interface ISnakeNode
+namespace _Code.Player.OldCode
 {
-    public ISnakeNode NextNode { get; set; }
-    public Queue<Vector3> WaypointList { get; set; }
+    public interface ISnakeNode
+    {
+        public ISnakeNode NextNode { get; set; }
+        public Queue<Vector3> WaypointList { get; set; }
 
-    public ISnakeNode GetLastNode();
-    public void SetSpeed(float speed);
+        public ISnakeNode GetLastNode();
+        public void SetSpeed(float speed);
+    }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _Code.Toolbox.SingleScriptables
+namespace _Code.Scriptables.SingleScriptables
 {
     [CreateAssetMenu(fileName = "NewSceneTransition", menuName = "CustomScriptables/SceneTransition")]
     public class SceneTransition : ScriptableObject

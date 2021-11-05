@@ -3,35 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointDropper : MonoBehaviour
+namespace _TutorialCode
 {
-    public List<Waypoint> markerList = new List<Waypoint>();
+    public class WaypointDropper : MonoBehaviour
+    {
+        public List<Waypoint> markerList = new List<Waypoint>();
     
-    private void FixedUpdate()
-    {
-        UpdateMarkerList();
+        private void FixedUpdate()
+        {
+            UpdateMarkerList();
+        }
+
+        public void UpdateMarkerList()
+        {
+            markerList.Add(new Waypoint(transform.position,transform.rotation));
+        }
+
+        public void ClearMarkerList()
+        {
+            markerList.Clear();
+            markerList.Add(new Waypoint(transform.position,transform.rotation));
+        }
     }
 
-    public void UpdateMarkerList()
+    [Serializable] public class Waypoint
     {
-        markerList.Add(new Waypoint(transform.position,transform.rotation));
-    }
+        public Vector3 position;
+        public Quaternion rotation;
 
-    public void ClearMarkerList()
-    {
-        markerList.Clear();
-        markerList.Add(new Waypoint(transform.position,transform.rotation));
-    }
-}
-
-[Serializable] public class Waypoint
-{
-    public Vector3 position;
-    public Quaternion rotation;
-
-    public Waypoint(Vector3 pos, Quaternion rot)
-    {
-        position = pos;
-        rotation = rot;
+        public Waypoint(Vector3 pos, Quaternion rot)
+        {
+            position = pos;
+            rotation = rot;
+        }
     }
 }

@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using _Code.Observer.Event;
+using _Code.CustomEvents.BaseEvent;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "CustomScriptables/Events/TransformEvent", fileName = "NewTransformEvent")]
-public class TransformEvent : BaseGameEvent<Transform>
+namespace _Code.CustomEvents.TransformEvent
 {
+    [CreateAssetMenu(menuName = "CustomScriptables/Events/TransformEvent", fileName = "NewTransformEvent")]
+    public class TransformEvent : BaseGameEvent<Transform>
+    {
+    }
 }

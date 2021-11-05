@@ -1,33 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraControl : MonoBehaviour
+namespace _Code.Camera
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private Vector3 basePositionOffset;
-    [SerializeField] private Vector3 baseLookOffset;
-    private Vector3 lookOffset;
-    private Vector3 positionOffset;
-
-    void LateUpdate()
+    public class CameraControl : MonoBehaviour
     {
-        AdjustRotation();
-        AdjustPositioning();
-    }
+        [SerializeField] private Transform target;
+        [SerializeField] private Vector3 basePositionOffset;
+        [SerializeField] private Vector3 baseLookOffset;
+        private Vector3 lookOffset;
+        private Vector3 positionOffset;
 
-    private void AdjustPositioning()
-    {
-        this.transform.position = target.position + positionOffset;
+        void LateUpdate()
+        {
+            AdjustRotation();
+            AdjustPositioning();
+        }
 
-        Vector3 direction = target.position + lookOffset - this.transform.position;
-        this.transform.rotation = Quaternion.LookRotation(direction);
-    }
+        private void AdjustPositioning()
+        {
+            this.transform.position = target.position + positionOffset;
 
-    private void AdjustRotation()
-    {
-        float angle = target.transform.rotation.eulerAngles.y;
-        positionOffset = Quaternion.AngleAxis(angle, Vector3.up) * basePositionOffset;
-        lookOffset = Quaternion.AngleAxis(angle, Vector3.up) * baseLookOffset;
+            Vector3 direction = target.position + lookOffset - this.transform.position;
+            this.transform.rotation = Quaternion.LookRotation(direction);
+        }
+
+        private void AdjustRotation()
+        {
+            float angle = target.transform.rotation.eulerAngles.y;
+            positionOffset = Quaternion.AngleAxis(angle, Vector3.up) * basePositionOffset;
+            lookOffset = Quaternion.AngleAxis(angle, Vector3.up) * baseLookOffset;
+        }
     }
 }

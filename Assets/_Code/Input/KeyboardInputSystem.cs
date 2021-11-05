@@ -4,68 +4,71 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class KeyboardInputSystem : MonoBehaviour
+namespace _Code.Input
 {
-    [SerializeField] private InputCode[] inputList;
-    private bool[] lastInputState;
-
-    private void Awake()
+    public class KeyboardInputSystem : MonoBehaviour
     {
-        lastInputState = new bool[inputList.Length];
-    }
+        [SerializeField] private InputCode[] inputList;
+        private bool[] lastInputState;
 
-    private void Update()
-    {
-        for (int i = 0; i < inputList.Length; i++)
+        private void Awake()
         {
-            InputCode inputCode = inputList[i];
-            
-            bool currentInputState = Input.GetKey(inputCode.InputKey);
-            
-            CheckEventToTrigger(lastInputState[i],currentInputState, inputCode);
-            
-            lastInputState[i] = currentInputState;
+            lastInputState = new bool[inputList.Length];
         }
-    }
+
+        private void Update()
+        {
+            for (int i = 0; i < inputList.Length; i++)
+            {
+                InputCode inputCode = inputList[i];
+            
+                bool currentInputState = UnityEngine.Input.GetKey(inputCode.InputKey);
+            
+                CheckEventToTrigger(lastInputState[i],currentInputState, inputCode);
+            
+                lastInputState[i] = currentInputState;
+            }
+        }
     
-    void CheckEventToTrigger(bool previousState, bool currentState, InputCode inputCode)
-    {
-        bool noInputTaken = !previousState && !currentState;
+        void CheckEventToTrigger(bool previousState, bool currentState, InputCode inputCode)
+        {
+            bool noInputTaken = !previousState && !currentState;
 
-        if (noInputTaken)
-        {
-            return;
-        }
+            if (noInputTaken)
+            {
+                return;
+            }
         
-        bool keyPressed = !previousState && currentState;
-        if (keyPressed)
-        {
-            inputCode.InputTapped.Invoke();
-            return;
-        }
+            bool keyPressed = !previousState && currentState;
+            if (keyPressed)
+            {
+                inputCode.InputTapped.Invoke();
+                return;
+            }
         
-        bool keyReleased = previousState && !currentState;
-        if (keyReleased)
-        {
-            inputCode.InputReleased.Invoke();
-            return;
-        }
+            bool keyReleased = previousState && !currentState;
+            if (keyReleased)
+            {
+                inputCode.InputReleased.Invoke();
+                return;
+            }
 
-        bool keyHeld = previousState && currentState;
-        if (keyHeld)
-        {
-            inputCode.InputHeld.Invoke();
-            return;
+            bool keyHeld = previousState && currentState;
+            if (keyHeld)
+            {
+                inputCode.InputHeld.Invoke();
+                return;
+            }
         }
     }
-}
 
-[Serializable]
-public struct InputCode
-{
-    [TextArea] public string Description;
-    public string InputKey;
-    public UnityEvent InputHeld;
-    public UnityEvent InputTapped;
-    public UnityEvent InputReleased;
+    [Serializable]
+    public struct InputCode
+    {
+        [TextArea] public string Description;
+        public string InputKey;
+        public UnityEvent InputHeld;
+        public UnityEvent InputTapped;
+        public UnityEvent InputReleased;
+    }
 }

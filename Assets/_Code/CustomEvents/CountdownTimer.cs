@@ -1,10 +1,8 @@
-﻿using System;
-using _Code.Observer.Event;
-using _Code.Toolbox.ValueHolders;
+﻿using _Code.Scriptables.SimpleValues;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Code.Observer
+namespace _Code.CustomEvents
 {
     public class CountdownTimer : MonoBehaviour
     {
@@ -12,7 +10,7 @@ namespace _Code.Observer
         [SerializeField] private bool _repeats;
         [SerializeField] private FloatValue _timeRemaining;
         [SerializeField] private UnityEvent _onTimerFinishedSimple;
-        [SerializeField] private VoidEvent _onTimerFinishedGlobal;
+        [SerializeField] private VoidEvent.VoidEvent _onTimerFinishedGlobal;
         private bool _isRunning = false;
 
         private void OnEnable()

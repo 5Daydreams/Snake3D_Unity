@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Code.Player
+namespace _Code.Player.OldCode
 {
     [RequireComponent(typeof(SnakeHeadMovement))]
     public class SnakeSizeManager : MonoBehaviour, ISnakeNode

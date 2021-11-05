@@ -1,163 +1,166 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using _TutorialCode;
 using UnityEngine;
 
-public class SnakeManager3D : MonoBehaviour
+namespace _Code.Player
 {
-    [SerializeField] private float distanceBetween = 0.2f;
-    [SerializeField] private List<GameObject> bodyParts = new List<GameObject>();
-    private List<GameObject> snakeBody = new List<GameObject>();
+    public class SnakeManager3D : MonoBehaviour
+    {
+        [SerializeField] private float distanceBetween = 0.2f;
+        [SerializeField] private List<GameObject> bodyParts = new List<GameObject>();
+        private List<GameObject> snakeBody = new List<GameObject>();
     
-    [Header("Speed")]
-    [SerializeField] private float baseSpeed;
-    [SerializeField] private float boostSpeed;
+        [Header("Speed")]
+        [SerializeField] private float baseSpeed;
+        [SerializeField] private float boostSpeed;
 
-    [Header("Rotation")]
-    [SerializeField] private float turnSpeedH = 90;
-    [SerializeField] private float turnSpeedV = 50;
-    [SerializeField] private float verticalPivotThreshold = 65.0f;
+        [Header("Rotation")]
+        [SerializeField] private float turnSpeedH = 90;
+        [SerializeField] private float turnSpeedV = 50;
+        [SerializeField] private float verticalPivotThreshold = 65.0f;
 
-    private Vector3 direction = new Vector3(0,0,1);
-    [HideInInspector] public float CurrentSpeed = 1.0f;
-    private bool isBoosting;
+        private Vector3 direction = new Vector3(0,0,1);
+        [HideInInspector] public float CurrentSpeed = 1.0f;
+        private bool isBoosting;
 
-    private float angleH = 0;
-    private float angleV = 0;
-    Quaternion rotH = Quaternion.identity;
-    Quaternion rotV = Quaternion.identity;
+        private float angleH = 0;
+        private float angleV = 0;
+        Quaternion rotH = Quaternion.identity;
+        Quaternion rotV = Quaternion.identity;
 
-    private float countUp = 0;
+        private float countUp = 0;
 
-    private void Start()
-    {
-        CreateBodyParts();
-    }
-
-    private void FixedUpdate()
-    {
-        ManageSnakeBody();
-        SnakeMovement();
-    }
-
-    private void ManageSnakeBody()
-    {
-        if (bodyParts.Count > 0)
+        private void Start()
         {
             CreateBodyParts();
         }
 
-        for (int i = 0; i < snakeBody.Count; i++)
+        private void FixedUpdate()
         {
-            if (snakeBody[i] == null)
+            ManageSnakeBody();
+            SnakeMovement();
+        }
+
+        private void ManageSnakeBody()
+        {
+            if (bodyParts.Count > 0)
             {
-                snakeBody.RemoveAt(i);
-                i = i - 1;
+                CreateBodyParts();
+            }
+
+            for (int i = 0; i < snakeBody.Count; i++)
+            {
+                if (snakeBody[i] == null)
+                {
+                    snakeBody.RemoveAt(i);
+                    i = i - 1;
+                }
+            }
+
+            if (snakeBody.Count == 0)
+            {
+                // Not necessary - snake is dead if count == 0 though
+                Destroy(this);
             }
         }
 
-        if (snakeBody.Count == 0)
+        private void SnakeMovement()
         {
-            // Not necessary - snake is dead if count == 0 though
-            Destroy(this);
-        }
-    }
+            AdjustRotation();
+            AdjustPosition();
 
-    private void SnakeMovement()
-    {
-        AdjustRotation();
-        AdjustPosition();
-
-        if (snakeBody.Count > 1)
-        {
-            for (int i = 1; i < snakeBody.Count; i++)
+            if (snakeBody.Count > 1)
             {
-                WaypointDropper markM = snakeBody[i - 1].GetComponent<WaypointDropper>();
+                for (int i = 1; i < snakeBody.Count; i++)
+                {
+                    WaypointDropper markM = snakeBody[i - 1].GetComponent<WaypointDropper>();
 
-                snakeBody[i].transform.position = markM.markerList[0].position;
-                snakeBody[i].transform.rotation = markM.markerList[0].rotation;
-                markM.markerList.RemoveAt(0);
+                    snakeBody[i].transform.position = markM.markerList[0].position;
+                    snakeBody[i].transform.rotation = markM.markerList[0].rotation;
+                    markM.markerList.RemoveAt(0);
+                }
             }
         }
-    }
     
-    void AdjustRotation()
-    {
-        direction = snakeBody[0].transform.rotation * Vector3.forward;
-    }
+        void AdjustRotation()
+        {
+            direction = snakeBody[0].transform.rotation * Vector3.forward;
+        }
 
-    void AdjustPosition()
-    {
-        snakeBody[0].transform.position += direction * CurrentSpeed * Time.deltaTime;
-    }
+        void AdjustPosition()
+        {
+            snakeBody[0].transform.position += direction * CurrentSpeed * Time.deltaTime;
+        }
 
-    public void TurnHorizontal(float angleDir)
-    {
-        angleH += angleDir * turnSpeedH * Time.deltaTime;
-        ApplyRotationToTransform();
-    }
+        public void TurnHorizontal(float angleDir)
+        {
+            angleH += angleDir * turnSpeedH * Time.deltaTime;
+            ApplyRotationToTransform();
+        }
     
-    public void TurnVertical(float angleDir)
-    {
-        angleV += angleDir * turnSpeedV * Time.deltaTime;
+        public void TurnVertical(float angleDir)
+        {
+            angleV += angleDir * turnSpeedV * Time.deltaTime;
 
-        angleV = Mathf.Clamp(angleV, -verticalPivotThreshold, verticalPivotThreshold);
-        ApplyRotationToTransform();
-    }
+            angleV = Mathf.Clamp(angleV, -verticalPivotThreshold, verticalPivotThreshold);
+            ApplyRotationToTransform();
+        }
 
-    private void ApplyRotationToTransform()
-    {
-        rotH = Quaternion.AngleAxis(angleH, Vector3.up);
-        rotV = Quaternion.AngleAxis(angleV, Vector3.right);
+        private void ApplyRotationToTransform()
+        {
+            rotH = Quaternion.AngleAxis(angleH, Vector3.up);
+            rotV = Quaternion.AngleAxis(angleV, Vector3.right);
 
-        snakeBody[0].transform.rotation = rotH * rotV;
-    }
+            snakeBody[0].transform.rotation = rotH * rotV;
+        }
     
-    public void SetSpeedBoost(bool value)
-    {
-        isBoosting = value;
+        public void SetSpeedBoost(bool value)
+        {
+            isBoosting = value;
         
-        if (isBoosting)
-        {
-            CurrentSpeed = baseSpeed + boostSpeed;
+            if (isBoosting)
+            {
+                CurrentSpeed = baseSpeed + boostSpeed;
+            }
+            else
+            {
+                CurrentSpeed = baseSpeed;
+            }
         }
-        else
-        {
-            CurrentSpeed = baseSpeed;
-        }
-    }
 
-    private void CreateBodyParts()
-    {
-        if (snakeBody.Count == 0)
+        private void CreateBodyParts()
         {
-            GameObject temp = Instantiate(bodyParts[0], transform.position, transform.rotation);
+            if (snakeBody.Count == 0)
+            {
+                GameObject temp = Instantiate(bodyParts[0], transform.position, transform.rotation);
             
-            snakeBody.Add(temp);
-            bodyParts.RemoveAt(0);
+                snakeBody.Add(temp);
+                bodyParts.RemoveAt(0);
+            }
+
+            WaypointDropper markM = snakeBody[snakeBody.Count - 1].GetComponent<WaypointDropper>();
+
+            if (countUp == 0)
+            {
+                markM.ClearMarkerList();
+            }
+
+            countUp += Time.deltaTime;
+
+            if (countUp >= distanceBetween)
+            {
+                GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation);
+
+                snakeBody.Add(temp);
+                bodyParts.RemoveAt(0);
+                temp.GetComponent<WaypointDropper>().ClearMarkerList();
+                countUp = 0;
+            }
         }
 
-        WaypointDropper markM = snakeBody[snakeBody.Count - 1].GetComponent<WaypointDropper>();
-
-        if (countUp == 0)
+        public void AddBodyParts(GameObject gObj)
         {
-            markM.ClearMarkerList();
+            bodyParts.Add(gObj);
         }
-
-        countUp += Time.deltaTime;
-
-        if (countUp >= distanceBetween)
-        {
-            GameObject temp = Instantiate(bodyParts[0], markM.markerList[0].position, markM.markerList[0].rotation);
-
-            snakeBody.Add(temp);
-            bodyParts.RemoveAt(0);
-            temp.GetComponent<WaypointDropper>().ClearMarkerList();
-            countUp = 0;
-        }
-    }
-
-    public void AddBodyParts(GameObject gObj)
-    {
-        bodyParts.Add(gObj);
     }
 }

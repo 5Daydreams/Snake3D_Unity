@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.IsolatedStorage;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace _Code.Player
+namespace _Code.Player.OldCode
 {
     public class SnakeBody : MonoBehaviour, ISnakeNode
     {

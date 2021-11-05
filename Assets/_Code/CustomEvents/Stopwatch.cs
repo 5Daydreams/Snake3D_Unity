@@ -1,7 +1,7 @@
-﻿using _Code.Toolbox.ValueHolders;
+﻿using _Code.Scriptables.SimpleValues;
 using UnityEngine;
 
-namespace _Code.Observer
+namespace _Code.CustomEvents
 {
     public class Stopwatch : MonoBehaviour
     {

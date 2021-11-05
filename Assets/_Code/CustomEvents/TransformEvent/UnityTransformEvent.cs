@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable] public class UnityTransformEvent : UnityEvent<Transform>
+namespace _Code.CustomEvents.TransformEvent
 {
+    [System.Serializable] public class UnityTransformEvent : UnityEvent<Transform>
+    {
     
+    }
 }

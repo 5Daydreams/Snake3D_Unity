@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using _Code.Input;
 using UnityEditor;
-using UnityEngine;
 
-[CustomEditor(typeof(KeyboardInputSystem))]
-public class KeyboardInputSystemEditor : Editor
+namespace _Code.Editor
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(KeyboardInputSystem))]
+    public class KeyboardInputSystemEditor : UnityEditor.Editor
     {
-        base.OnInspectorGUI();
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+        }
     }
 }

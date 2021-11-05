@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using _Code.Observer.Event;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Code.Observer.Listener
+namespace _Code.CustomEvents.BaseEvent
 {
     public abstract class BaseGameEventListener<T, E, UER> : MonoBehaviour,
         IGameEventListener<T> where E : BaseGameEvent<T> where UER : UnityEvent<T>

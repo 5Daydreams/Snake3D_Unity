@@ -1,4 +1,4 @@
-﻿namespace _Code.Observer.Listener
+﻿namespace _Code.CustomEvents.BaseEvent
 {
     public interface IGameEventListener<T>
     {

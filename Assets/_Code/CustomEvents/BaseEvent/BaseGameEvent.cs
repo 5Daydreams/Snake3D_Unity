@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using _Code.Observer.Listener;
 using UnityEngine;
 
-namespace _Code.Observer.Event
+namespace _Code.CustomEvents.BaseEvent
 {
     public class BaseGameEvent<T> : ScriptableObject
     {

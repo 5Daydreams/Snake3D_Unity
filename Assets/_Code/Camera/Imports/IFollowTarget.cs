@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public interface IFollowTarget
+namespace _Code.Camera.Imports
 {
-    void FollowTarget(Transform targetToBeFollowed);
+    public interface IFollowTarget
+    {
+        void FollowTarget(Transform targetToBeFollowed);
+    }
 }

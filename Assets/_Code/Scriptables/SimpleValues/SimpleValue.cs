@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Code.Toolbox.ValueHolders
+namespace _Code.Scriptables.SimpleValues
 {
     public abstract class SimpleValue<T> : ScriptableObject
     {

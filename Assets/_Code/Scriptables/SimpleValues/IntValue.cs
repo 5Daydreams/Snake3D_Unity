@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Code.Toolbox.ValueHolders
+namespace _Code.Scriptables.SimpleValues
 {
     [CreateAssetMenu(fileName = "IntValue", menuName = "CustomScriptables/SimpleValue/Int")]
     public class IntValue : SimpleValue<int>
