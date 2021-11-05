@@ -9,19 +9,21 @@ namespace _Code.Player
         [SerializeField] private float distanceBetween = 0.2f;
         [SerializeField] private List<GameObject> bodyNodesToSpawn = new List<GameObject>();
         private List<GameObject> snakeBody = new List<GameObject>();
-    
+
         [Header("Speed")]
         [SerializeField] private float baseSpeed;
-        [SerializeField] private float boostSpeed;
+        [SerializeField] private float boostMultiplier;
 
         [Header("Rotation")]
         [SerializeField] private float turnSpeedH = 90;
+
         [SerializeField] private float turnSpeedV = 50;
         [SerializeField] private float verticalPivotThreshold = 65.0f;
 
         private Vector3 direction = new Vector3(0,0,1);
         [HideInInspector] public float CurrentSpeed = 1.0f;
         private bool isBoosting;
+        private float currentDistanceBetween = 0.2f;
 
         private float angleH = 0;
         private float angleV = 0;
@@ -120,7 +122,7 @@ namespace _Code.Player
         
             if (isBoosting)
             {
-                CurrentSpeed = baseSpeed + boostSpeed;
+                CurrentSpeed = baseSpeed * boostMultiplier;
             }
             else
             {

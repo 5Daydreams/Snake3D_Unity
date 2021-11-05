@@ -5,10 +5,10 @@ namespace _Code.Camera
     public class CameraControl : MonoBehaviour
     {
         [SerializeField] private Transform target;
-        [SerializeField] private Vector3 basePositionOffset;
+        [SerializeField] private Vector3 positionOffset;
+        [SerializeField] private float tilt;
         [SerializeField] private Vector3 baseLookOffset;
         private Vector3 lookOffset;
-        private Vector3 positionOffset;
 
         void LateUpdate()
         {
@@ -18,17 +18,20 @@ namespace _Code.Camera
 
         private void AdjustPositioning()
         {
-            this.transform.position = target.position + positionOffset;
+            this.transform.position = target.position + this.transform.rotation * positionOffset;
 
             Vector3 direction = target.position + lookOffset - this.transform.position;
-            this.transform.rotation = Quaternion.LookRotation(direction);
+            // this.transform.rotation = Quaternion.LookRotation(direction);
         }
 
         private void AdjustRotation()
         {
-            float angle = target.transform.rotation.eulerAngles.y;
-            positionOffset = Quaternion.AngleAxis(angle, Vector3.up) * basePositionOffset;
-            lookOffset = Quaternion.AngleAxis(angle, Vector3.up) * baseLookOffset;
+            Quaternion thing = Quaternion.AngleAxis(tilt,target.right);
+            this.transform.rotation = thing * target.rotation;
+            return;
+            //
+            // float angle = target.transform.rotation.eulerAngles.y;
+            // lookOffset = Quaternion.AngleAxis(angle, Vector3.up) * baseLookOffset;
         }
 
         public void SetTarget(Transform newTarget)

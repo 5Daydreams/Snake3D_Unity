@@ -197,8 +197,8 @@ MonoBehaviour:
   - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: 1241669219798450131, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   baseSpeed: 4
-  boostSpeed: 3
-  turnSpeedH: 90
-  turnSpeedV: 50
+  boostMultiplier: 1.5
+  turnSpeedH: 120
+  turnSpeedV: 65
   verticalPivotThreshold: 65
   CurrentSpeed: 1
