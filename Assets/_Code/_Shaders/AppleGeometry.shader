@@ -45,15 +45,12 @@ Shader "Unlit/AppleGeometry"
 
             _AppleAxis = normalize(_AppleAxis);
 
-            float thing = abs(dot(normalDir, _AppleAxis));
+            float angleToAppleAxis = abs(dot(normalDir, _AppleAxis));
 
-            // float anotherThing = thing * thing;
-            float anotherThing = pow(thing,_FloatTest2);
+            float angleOnPow = pow(angleToAppleAxis,_FloatTest2);
             
-            float appleBump = - _FloatTest * anotherThing;
+            float appleBump = - _FloatTest * angleOnPow;
             
-            // float inflexValue =  (_FloatTest- _FloatTest2 * );
-
             v.vertex.xyz += normalDir * appleBump;
             o.vertexNormal = normalDir;
         }

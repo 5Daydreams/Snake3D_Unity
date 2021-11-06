@@ -7,7 +7,7 @@ namespace _TutorialCode
 {
     public class WaypointDropper : MonoBehaviour
     {
-        public List<Waypoint> markerList = new List<Waypoint>();
+        [HideInInspector] public List<Waypoint> markerList = new List<Waypoint>();
     
         private void FixedUpdate()
         {
