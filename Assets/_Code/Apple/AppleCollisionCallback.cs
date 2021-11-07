@@ -5,14 +5,19 @@ using UnityEngine;
 
 namespace _Code.Apple
 {
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider),typeof(MeshRenderer))]
     public class AppleCollisionCallback : MonoBehaviour
     {
         [Tooltip("Leave as empty string if no tag is required")]
         [SerializeField] private string _targetTag = "";
         [SerializeField] private ColorEvent _onTriggerEnterCallback;
-        [SerializeField] private Color _appleColor;
-        
+        private Color _appleColor;
+
+        private void Awake()
+        {
+            _appleColor = this.GetComponent<MeshRenderer>().sharedMaterial.color;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (_targetTag == "")
