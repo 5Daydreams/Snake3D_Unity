@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using _TutorialCode;
-using UnityEditorInternal;
+using _2DVersion._Code;
 using UnityEngine;
 
-namespace _Code.Player
+namespace _Code.Player.OldCodeWithoutLinkedList
 {
     public class SnakeManager3D : MonoBehaviour
     {

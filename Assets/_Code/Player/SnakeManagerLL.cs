@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using _2DVersion._Code;
 using _Code.LinkedList;
-using _TutorialCode;
 using UnityEngine;
 
-namespace _Code.Player.LinkedListSnakeManager
+namespace _Code.Player
 {
     public class SnakeManagerLL : MonoBehaviour
     {

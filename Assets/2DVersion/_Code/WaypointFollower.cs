@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _TutorialCode
+namespace _2DVersion._Code
 {
     public class WaypointFollower : MonoBehaviour
     {

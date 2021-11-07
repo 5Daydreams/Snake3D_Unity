@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace _TutorialCode
+namespace _2DVersion._Code
 {
     public class WaypointDropper : MonoBehaviour
     {

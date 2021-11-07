@@ -1,8 +1,8 @@
-﻿using _Code.LinkedList;
-using _TutorialCode;
+﻿using _2DVersion._Code;
+using _Code.LinkedList;
 using UnityEngine;
 
-namespace _Code.Player.LinkedListSnakeManager
+namespace _Code.Player
 {
     [RequireComponent(typeof(WaypointDropper))]
     public class SnakeNode : MonoBehaviour, ILinkedListNode<SnakeNode>
