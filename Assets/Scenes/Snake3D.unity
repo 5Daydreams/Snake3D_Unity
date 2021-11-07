@@ -566,6 +566,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100256858}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1559319802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6946410268866593747, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_Name
+      value: Apple (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946410268866593749, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bfd0210c23319de4d93ebd784cc985fa, type: 2}
+    - target: {fileID: 6946410268866593751, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946410268866593751, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946410268866593751, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946410268866593751, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946410268866593751, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: _appleColor.b
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: _appleColor.g
+      value: 0.85776937
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: _appleColor.r
+      value: 0.5504183
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
 --- !u!1001 &4731399119658117324
 PrefabInstance:
   m_ObjectHideFlags: 0
