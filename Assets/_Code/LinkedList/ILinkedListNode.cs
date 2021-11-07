@@ -1,6 +1,6 @@
 ﻿namespace _Code.LinkedList
 {
-    public interface ILListNode<T>
+    public interface ILinkedListNode<T>
     {
         T Next
         {

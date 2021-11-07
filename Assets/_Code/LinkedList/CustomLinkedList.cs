@@ -2,7 +2,7 @@
 
 namespace _Code.LinkedList
 {
-    public class CustomLinkedList<T> where T : ILListNode<T>
+    public class CustomLinkedList<T> where T : ILinkedListNode<T>
     {
         public T Head;
 
