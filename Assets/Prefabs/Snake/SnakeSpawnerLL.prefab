@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4112523162666899765}
   - component: {fileID: 4112523162666899762}
-  - component: {fileID: 9061159209825025987}
+  - component: {fileID: 5313608300570339569}
   m_Layer: 0
   m_Name: SnakeSpawnerLL
   m_TagString: Untagged
@@ -51,7 +51,8 @@ MonoBehaviour:
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   distanceBetweenNodes: 0.2
---- !u!114 &9061159209825025987
+  debugColorSelection: {r: 1, g: 0, b: 0, a: 0.6117647}
+--- !u!114 &5313608300570339569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,22 +61,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 4112523162666899760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b410775016764ffbaceb8da3847867da, type: 3}
+  m_Script: {fileID: 11500000, guid: b8674da2a41577c4da2c476c7381f48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: 1f4e493b47a67dd409c76088f29d444b, type: 2}
+  _gameEvent: {fileID: 11400000, guid: cda6548d2539b634882ca8cfffe11ba7, type: 2}
   UnityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4112523162666899762}
-        m_TargetAssemblyTypeName: _Code.Player.LinkedListSnakeManager.SnakeManagerLL,
-          Assembly-CSharp
+        m_TargetAssemblyTypeName: _Code.Player.SnakeManagerLL, Assembly-CSharp
         m_MethodName: AddBodyParts
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
-          m_ObjectArgumentAssemblyTypeName: _Code.Player.LinkedListSnakeManager.SnakeNode,
-            Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: _Code.Player.SnakeNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4112523162666899762}
+        m_TargetAssemblyTypeName: _Code.Player.SnakeManagerLL, Assembly-CSharp
+        m_MethodName: NewHeadColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

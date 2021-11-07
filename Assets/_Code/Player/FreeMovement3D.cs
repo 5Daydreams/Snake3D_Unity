@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Code.Player
@@ -20,7 +21,11 @@ namespace _Code.Player
         Quaternion rotH = Quaternion.identity;
         Quaternion rotV = Quaternion.identity;
 
-    
+        private void Awake()
+        {
+            SetSpeedBoost(false);
+        }
+
         private void FixedUpdate()
         {
             AdjustHeadRotation();

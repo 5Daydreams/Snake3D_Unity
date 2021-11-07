@@ -9,9 +9,11 @@ namespace _Code.Player
     {
         public SnakeNode Next { get; set; }
         public WaypointDropper WaypointDropper;
-        public MeshRenderer Renderer;
+        [SerializeField] private MeshRenderer Renderer;
+        
+        [HideInInspector] public Color CurrentNodeColor;
         private MaterialPropertyBlock mpb;
-        private static readonly int Albedo = Shader.PropertyToID("Albedo");
+        private static readonly int ColorPropertyID = Shader.PropertyToID("_Color");
 
         public MaterialPropertyBlock Mpb
         {
@@ -27,7 +29,8 @@ namespace _Code.Player
         
         public void SetNodeColor(Color thing)
         {
-            Mpb.SetColor(Albedo, thing);
+            CurrentNodeColor = thing;
+            Mpb.SetColor(ColorPropertyID, CurrentNodeColor);
             Renderer.SetPropertyBlock(Mpb);
         }
     }

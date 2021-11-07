@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab80691780ef414991eab2255d64373e, type: 3}
-  m_Name: ChangeSnakeColor
+  m_Script: {fileID: 11500000, guid: 25f4c273fd7fbf04a9a0c33eaddf1021, type: 3}
+  m_Name: ColorE_AteApple
   m_EditorClassIdentifier: 
+  useInspectorValue: 0
+  inspectorValue: {r: 1, g: 0, b: 0, a: 1}

@@ -9,10 +9,11 @@ namespace _Code.Player
     {
         [SerializeField] private List<SnakeNode> bodyNodesSpawnQueue = new List<SnakeNode>();
         [SerializeField] private float distanceBetweenNodes = 0.2f;
-        
+        [SerializeField] private Color debugColorSelection;
+
         private CustomLinkedList<SnakeNode> snakeBody = new CustomLinkedList<SnakeNode>();
         private float countUp = 0;
-        
+
         private void Start()
         {
             CreateBodyParts();
@@ -53,7 +54,7 @@ namespace _Code.Player
             if (snakeBody.Count == 0)
             {
                 SnakeNode firstNode = Instantiate(bodyNodesSpawnQueue[0], transform.position, transform.rotation);
-                
+
                 snakeBody.Add(firstNode);
                 bodyNodesSpawnQueue.RemoveAt(0);
             }
@@ -97,6 +98,33 @@ namespace _Code.Player
                     frontNodeWPDropper.markerList.RemoveAt(0);
                 }
             }
+        }
+
+        public void NewHeadColor(Color newColour)
+        {
+            Color oldColor;
+            SnakeNode currentNode = snakeBody.Head;
+
+            while (currentNode.Next != null)
+            {
+                oldColor = currentNode.CurrentNodeColor;
+                currentNode.SetNodeColor(newColour);
+                newColour = oldColor;
+            }
+        }
+        
+        public void SetAllBodyColours()
+        {
+            for (int i = 0; i < snakeBody.Count; i++)
+            {
+                SetBodyColorAtIndex(i);
+            }
+        }
+
+        public void SetBodyColorAtIndex(int index)
+        {
+            SnakeNode targetNode = snakeBody.GetNodeAtIndex(index);
+            targetNode.SetNodeColor(debugColorSelection);
         }
     }
 }
