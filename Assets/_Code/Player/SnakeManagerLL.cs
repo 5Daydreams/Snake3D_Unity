@@ -110,6 +110,8 @@ namespace _Code.Player
                 oldColor = currentNode.CurrentNodeColor;
                 currentNode.SetNodeColor(newColour);
                 newColour = oldColor;
+                
+                currentNode = currentNode.Next;
             }
         }
         

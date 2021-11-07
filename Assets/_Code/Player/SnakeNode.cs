@@ -1,4 +1,5 @@
-﻿using _2DVersion._Code;
+﻿using System;
+using _2DVersion._Code;
 using _Code.LinkedList;
 using UnityEngine;
 
@@ -14,6 +15,11 @@ namespace _Code.Player
         [HideInInspector] public Color CurrentNodeColor;
         private MaterialPropertyBlock mpb;
         private static readonly int ColorPropertyID = Shader.PropertyToID("_Color");
+
+        private void Awake()
+        {
+            CurrentNodeColor = Renderer.sharedMaterial.color;
+        }
 
         public MaterialPropertyBlock Mpb
         {

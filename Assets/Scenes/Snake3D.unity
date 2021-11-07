@@ -443,29 +443,6 @@ MonoBehaviour:
     InputReleased:
       m_PersistentCalls:
         m_Calls: []
-  - Description: Push New Head Color
-    InputKey: g
-    InputHeld:
-      m_PersistentCalls:
-        m_Calls: []
-    InputTapped:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000, guid: f3b00cb5e7008eb4ea5a7815c3afcb9b, type: 2}
-          m_TargetAssemblyTypeName: _Code.CustomEvents.VoidEvent.VoidEvent, Assembly-CSharp
-          m_MethodName: Raise
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    InputReleased:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &1047958259
 MonoBehaviour:
   m_ObjectHideFlags: 0

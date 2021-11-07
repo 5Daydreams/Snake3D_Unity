@@ -1,4 +1,5 @@
-﻿using _Code.CustomEvents.ColorEvent;
+﻿using System;
+using _Code.CustomEvents.ColorEvent;
 using _Code.CustomEvents.VoidEvent;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace _Code.Apple
         [SerializeField] private string _targetTag = "";
         [SerializeField] private ColorEvent _onTriggerEnterCallback;
         [SerializeField] private Color _appleColor;
+        
         private void OnTriggerEnter(Collider other)
         {
             if (_targetTag == "")
@@ -18,7 +20,7 @@ namespace _Code.Apple
                 _onTriggerEnterCallback?.Raise(_appleColor);
                 return;
             }
-
+            
             if (other.CompareTag(_targetTag))
             {
                 _onTriggerEnterCallback?.Raise(_appleColor);
