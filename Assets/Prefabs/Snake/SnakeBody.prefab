@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaypointDropper: {fileID: 869095396084255636}
+  Renderer: {fileID: 1483174795157009791}
 --- !u!1 &2945553933160734781
 GameObject:
   m_ObjectHideFlags: 0
