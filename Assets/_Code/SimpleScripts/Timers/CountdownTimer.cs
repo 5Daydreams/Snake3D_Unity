@@ -12,6 +12,30 @@ namespace _Code.SimpleScripts.Timers
         [SerializeField] private UnityEvent _onTimerFinishedSimple;
         [SerializeField] private CustomEvents.VoidEvent.VoidEvent _onTimerFinishedGlobal;
         private bool _isRunning = false;
+        private float _timerIntenal = 0;
+
+        public float TimerValue
+        {
+            get
+            {
+                if (_timeRemaining == null)
+                {
+                    return _timerIntenal;
+                }
+
+                return _timeRemaining.Value;
+            }
+            set
+            {
+                if (_timeRemaining == null)
+                {
+                    _timerIntenal = value;
+                    return;
+                }
+
+                _timeRemaining.Value = value;
+            }
+        }
 
         private void OnEnable()
         {
@@ -21,6 +45,12 @@ namespace _Code.SimpleScripts.Timers
             }
         }
 
+        public void StartFromGivenTime(float startTime)
+        {
+            SetStartingTime(startTime);
+            StartCountdown();
+        }
+
         public void SetStartingTime(float time)
         {
             startingTime = time;
@@ -28,7 +58,7 @@ namespace _Code.SimpleScripts.Timers
 
         private void FixedUpdate()
         {
-            if (_timeRemaining.Value <= 0)
+            if (TimerValue <= 0)
             {
                 _isRunning = false;
                 
@@ -38,7 +68,7 @@ namespace _Code.SimpleScripts.Timers
                 }
                 else
                 {
-                    _timeRemaining.Value = 0;
+                    TimerValue = 0;
                 }
 
                 _onTimerFinishedSimple?.Invoke();
@@ -48,7 +78,7 @@ namespace _Code.SimpleScripts.Timers
             if (!_isRunning)
                 return;
             
-            _timeRemaining.Value -= Time.deltaTime;
+            TimerValue -= Time.deltaTime;
         }
 
         public void StopTimer()
@@ -63,7 +93,7 @@ namespace _Code.SimpleScripts.Timers
 
         public void StartCountdown()
         {
-            _timeRemaining.Value = startingTime;
+            TimerValue = startingTime;
             ResumeTimer();
         }
     }
