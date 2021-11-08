@@ -10,7 +10,8 @@ namespace _Code.Apple
     {
         [Tooltip("Leave as empty string if no tag is required")]
         [SerializeField] private string _targetTag = "";
-        [SerializeField] private ColorEvent _onTriggerEnterCallback;
+        [SerializeField] private ColorEvent _colorChangeCallback;
+        [SerializeField] private VoidEvent _powerupCallback;
         private Color _appleColor;
 
         private void Awake()
@@ -22,13 +23,13 @@ namespace _Code.Apple
         {
             if (_targetTag == "")
             {
-                _onTriggerEnterCallback?.Raise(_appleColor);
+                _colorChangeCallback?.Raise(_appleColor);
                 return;
             }
             
             if (other.CompareTag(_targetTag))
             {
-                _onTriggerEnterCallback?.Raise(_appleColor);
+                _colorChangeCallback?.Raise(_appleColor);
             }
         }
     }

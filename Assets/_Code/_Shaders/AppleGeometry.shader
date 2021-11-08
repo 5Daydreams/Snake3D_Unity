@@ -2,25 +2,27 @@ Shader "Unlit/AppleGeometry"
 {
     Properties
     {
-        _AppleColor ("Tint", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (1,1,1,1)
         _AppleAxis("Apple Axis", Vector) = (0,1,0,0)
-        _FloatTest("_FloatTest", Float) = 1.0
-        _FloatTest2("_FloatTest 2", Float) = 1.0
+        _BumpIntensity("Bump Intensity", Float) = 1.0
+        _BumpCurvature("Bump Curvature", Float) = 1.0
     }
     SubShader
     {
         Tags
         {
-            "RenderType"="Opaque" "Queue"="Geometry"
+            "RenderType"="Transparent" "Queue"="Transparent"
         }
+        
+        Blend SrcAlpha OneMinusSrcAlpha
 
         CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows vertex:vert addshadow
+        #pragma surface surf Standard fullforwardshadows vertex:vert addshadow alpha:fade
 
-        float4 _AppleColor;
+        float4 _Color;
         float3 _AppleAxis;
-        float _FloatTest;
-        float _FloatTest2;
+        float _BumpIntensity;
+        float _BumpCurvature;
 
         struct Input
         {
@@ -47,9 +49,9 @@ Shader "Unlit/AppleGeometry"
 
             float angleToAppleAxis = abs(dot(normalDir, _AppleAxis));
 
-            float angleOnPow = pow(angleToAppleAxis,_FloatTest2);
+            float angleOnPow = pow(angleToAppleAxis,_BumpCurvature);
             
-            float appleBump = - _FloatTest * angleOnPow;
+            float appleBump = - _BumpIntensity * angleOnPow;
             
             v.vertex.xyz += normalDir * appleBump;
             o.vertexNormal = normalDir;
@@ -57,9 +59,10 @@ Shader "Unlit/AppleGeometry"
 
         void surf(Input i, inout SurfaceOutputStandard o)
         {
-            o.Albedo = _AppleColor;
+            o.Albedo = _Color;
+            o.Alpha = _Color.a;
         }
         ENDCG
     }
-    FallBack "Standard"
+//    FallBack "Standard"
 }

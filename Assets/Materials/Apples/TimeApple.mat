@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedApple
+  m_Name: TimeApple
   m_Shader: {fileID: 4800000, guid: 391dbcf9ed74bac4ea1e86e3e3d3ffff, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -78,7 +78,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AppleAxis: {r: 0, g: 1, b: 0, a: 1}
-    - _AppleColor: {r: 1, g: 0, b: 0, a: 1}
-    - _Color: {r: 0.6132076, g: 0.11222852, b: 0.12288759, a: 1}
+    - _AppleColor: {r: 0.54901963, g: 0.85882354, b: 0.8784314, a: 1}
+    - _Color: {r: 0.764151, g: 0.6945844, b: 0.48588467, a: 0.92156863}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
