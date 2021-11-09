@@ -6,12 +6,13 @@ Shader "Unlit/AppleGeometry"
         _AppleAxis("Apple Axis", Vector) = (0,1,0,0)
         _BumpIntensity("Bump Intensity", Float) = 1.0
         _BumpCurvature("Bump Curvature", Float) = 1.0
+        _LightPower("Light Power", Float) = 1.0
     }
     SubShader
     {
         Tags
         {
-            "RenderType"="Transparent" "Queue"="Transparent"
+            "RenderType"="Opaque" "Queue"="Transparent"
         }
         
         Blend SrcAlpha OneMinusSrcAlpha
@@ -23,6 +24,7 @@ Shader "Unlit/AppleGeometry"
         float3 _AppleAxis;
         float _BumpIntensity;
         float _BumpCurvature;
+        float _LightPower;
 
         struct Input
         {
@@ -41,20 +43,23 @@ Shader "Unlit/AppleGeometry"
         {
             UNITY_INITIALIZE_OUTPUT(Input, o);
             o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-            v.normal = normalize(v.normal);
+            float3 sphereNormalDirection = normalize(v.normal.xyz);
 
-            float3 normalDir = normalize(v.normal.xyz);
+            _AppleAxis = normalize(_AppleAxis.xyz);
 
-            _AppleAxis = normalize(_AppleAxis);
+            float angleToAppleAxis = dot(sphereNormalDirection, _AppleAxis);
+            float unsignedAngleToAppleAxis = abs(angleToAppleAxis);
 
-            float angleToAppleAxis = abs(dot(normalDir, _AppleAxis));
+            float unsignedAngleOnPow = pow(unsignedAngleToAppleAxis,_BumpCurvature);
 
-            float angleOnPow = pow(angleToAppleAxis,_BumpCurvature);
+            float appleBump = - _BumpIntensity * unsignedAngleOnPow;
+
+            v.vertex.xyz += sphereNormalDirection * appleBump;
             
-            float appleBump = - _BumpIntensity * angleOnPow;
+            float3 centerAppleNormal = normalize(float3(- sphereNormalDirection.x,(1 - unsignedAngleToAppleAxis) * sign(angleToAppleAxis),- sphereNormalDirection.z));
+            float3 finalNormal = lerp(sphereNormalDirection,centerAppleNormal,unsignedAngleOnPow);
             
-            v.vertex.xyz += normalDir * appleBump;
-            o.vertexNormal = normalDir;
+            v.normal = finalNormal;
         }
 
         void surf(Input i, inout SurfaceOutputStandard o)
@@ -64,5 +69,5 @@ Shader "Unlit/AppleGeometry"
         }
         ENDCG
     }
-//    FallBack "Standard"
+    // FallBack "Standard"
 }

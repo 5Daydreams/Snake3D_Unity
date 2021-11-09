@@ -71,6 +71,8 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoiseCellSize: 0.2
+    - _NoiseDensity1: 0.8
+    - _NoiseDensity2: -0.6
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
