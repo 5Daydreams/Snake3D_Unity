@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Code.SimpleScripts.CodeAnimations
 {
@@ -6,8 +8,21 @@ namespace _Code.SimpleScripts.CodeAnimations
     {
         [SerializeField] private float _rotationSpeed;
         [SerializeField] private Vector3 _rotationAxis = Vector3.up;
+        [SerializeField] private bool _randomizeRotationOnSpawn;
         private Quaternion rotation = Quaternion.identity;
-        
+
+        private void Awake()
+        {
+            if (_randomizeRotationOnSpawn)
+            {
+                float x = Random.Range(-1, 1);
+                float y = Random.Range(-1, 1);
+                float z = Random.Range(-1, 1);
+                
+                _rotationAxis = new Vector3(x,y,z);
+            }
+        }
+
         void FixedUpdate()
         {
             if (_rotationAxis == Vector3.zero)

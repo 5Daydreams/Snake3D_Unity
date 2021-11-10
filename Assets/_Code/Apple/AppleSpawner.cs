@@ -1,35 +1,36 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using _Code.Apple;
 using UnityEngine;
 
-public class AppleSpawner : MonoBehaviour
+namespace _Code.Apple
 {
-    [SerializeField] private List<AppleAndWeight> _appleList;
-    private List<AppleCollisionCallback> _listToChoseFrom;
-
-    public void SpawnRandomApple()
+    public class AppleSpawner : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private List<AppleAndWeight> _appleList;
+        private List<AppleCollisionCallback> _listToChoseFrom;
 
-    private void OnValidate()
-    {
-        _listToChoseFrom.Clear();
-        foreach (AppleAndWeight apple in _appleList)
+        public void SpawnRandomApple()
         {
-            for (int i = 0; i < apple.Repeats; i++)
+        
+        }
+
+        private void OnValidate()
+        {
+            _listToChoseFrom.Clear();
+            foreach (AppleAndWeight apple in _appleList)
             {
-                _listToChoseFrom.Add(apple.AppleReference);
+                for (int i = 0; i < apple.Repeats; i++)
+                {
+                    _listToChoseFrom.Add(apple.AppleReference);
+                }
             }
         }
-    }
 
-    [Serializable]
-    public class AppleAndWeight
-    {
-        public int Repeats;
-        public AppleCollisionCallback AppleReference;
+        [Serializable]
+        public class AppleAndWeight
+        {
+            public int Repeats;
+            public AppleCollisionCallback AppleReference;
+        }
     }
 }

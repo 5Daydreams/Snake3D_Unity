@@ -818,6 +818,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5265988271728000641, guid: 1eda39afc8bd01b438a216e7b8bf3b30, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265988271728000641, guid: 1eda39afc8bd01b438a216e7b8bf3b30, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.289
+      objectReference: {fileID: 0}
     - target: {fileID: 5265988272565047588, guid: 1eda39afc8bd01b438a216e7b8bf3b30, type: 3}
       propertyPath: m_Name
       value: FlyingBlock
