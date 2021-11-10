@@ -59,6 +59,7 @@ Material:
     - _BumpScale: 1
     - _CellSize: 0.25
     - _Cutoff: 0.5
+    - _Debug: 1.81
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _ExtrusionAmplitude1: -0.4
@@ -68,13 +69,15 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.301
     - _Mode: 0
     - _NoiseCellSize: 0.2
-    - _NoiseDensity1: 0.8
-    - _NoiseDensity2: -0.6
+    - _NoiseDensity1: -18
+    - _NoiseDensity2: 2.6
+    - _Occlusion: 0.763
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -85,7 +88,7 @@ Material:
     - _Color1: {r: 0.33813834, g: 0.40290752, b: 0.48900002, a: 1}
     - _Color2: {r: 0.7921569, g: 0.28650144, b: 0.24313724, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OscillationOffset: {r: -4.5, g: -24.7, b: 36.9, a: 1}
+    - _OscillationOffset: {r: -0.05, g: -31.69, b: 36.9, a: 1}
     - _OscillationSpeed1: {r: 1, g: 0, b: 0, a: 0}
     - _OscillationSpeed2: {r: 3.22, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
