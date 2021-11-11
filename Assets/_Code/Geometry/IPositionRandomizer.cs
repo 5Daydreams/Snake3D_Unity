@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Code.Apple
+namespace _Code.Geometry
 {
     public interface IPositionRandomizer
     {

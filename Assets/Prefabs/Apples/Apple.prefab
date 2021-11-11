@@ -305,6 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 150
+  _rotationAxis: {x: 0, y: 1, z: 0}
+  _randomizeRotationOnSpawn: 0
 --- !u!114 &7310731546492205951
 MonoBehaviour:
   m_ObjectHideFlags: 0

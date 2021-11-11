@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Code.SimpleScripts.CodeAnimations
+namespace _Code.Geometry
 {
     public class RotateOnTime : MonoBehaviour
     {
@@ -15,12 +15,14 @@ namespace _Code.SimpleScripts.CodeAnimations
         {
             if (_randomizeRotationOnSpawn)
             {
-                float x = Random.Range(-1, 1);
-                float y = Random.Range(-1, 1);
-                float z = Random.Range(-1, 1);
+                float x = Random.Range(-1.0f, 1.0f);
+                float y = Random.Range(-1.0f, 1.0f);
+                float z = Random.Range(-1.0f, 1.0f);
                 
                 _rotationAxis = new Vector3(x,y,z);
             }
+            
+            _rotationAxis.Normalize();
         }
 
         void FixedUpdate()
@@ -32,6 +34,13 @@ namespace _Code.SimpleScripts.CodeAnimations
 
             rotation = Quaternion.AngleAxis(Time.deltaTime * _rotationSpeed, _rotationAxis);
             this.transform.rotation = rotation * this.transform.rotation;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(transform.position, _rotationAxis * _rotationSpeed / 180);
+            Gizmos.color = Color.white;
         }
     }
 }

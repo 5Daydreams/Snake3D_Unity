@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c5a9450f1d68942b14a459b6b44a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 4
-  boostMultiplier: 1.8
+  baseSpeed: 6
+  boostMultiplier: 2.1
   turnSpeedH: 150
   turnSpeedV: 120
   verticalPivotThreshold: 65

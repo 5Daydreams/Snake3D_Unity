@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5265988271728000892}
   - component: {fileID: 5265988271728000890}
   - component: {fileID: 5265988271728000893}
+  - component: {fileID: 1151756309604523111}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -168,6 +169,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1151756309604523111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988271728000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30aef730f0fda2449e2617bf053f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetTag: 
+  _stoneCollisionCallback: {fileID: 0}
 --- !u!1 &5265988272565047588
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5265988272565047589}
   - component: {fileID: 5265988272565047584}
+  - component: {fileID: 3850550327926919874}
   m_Layer: 0
   m_Name: FlyingBlock
   m_TagString: Untagged
@@ -215,3 +231,18 @@ MonoBehaviour:
   _rotationSpeed: 50
   _rotationAxis: {x: 1, y: -1, z: 1}
   _randomizeRotationOnSpawn: 1
+--- !u!114 &3850550327926919874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988272565047588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32942b3a1cea86d44a7553f53f495ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _randomizeDirectionOnSpawn: 1
+  Direction: {x: 1, y: 1, z: 1}

@@ -6,11 +6,12 @@ using UnityEngine;
 
 namespace _Code.Apple
 {
-    [RequireComponent(typeof(Collider),typeof(MeshRenderer))]
+    [RequireComponent(typeof(Collider), typeof(MeshRenderer))]
     public class AppleCollisionCallback : MonoBehaviour
     {
-        [Tooltip("Leave as empty string if no tag is required")]
-        [SerializeField] private string _targetTag = "";
+        [Tooltip("Leave as empty string if no tag is required")] [SerializeField]
+        private string _targetTag = "";
+
         [SerializeField] private ColorEvent _colorChangeCallback;
         [SerializeField] private FloatEvent _powerupCallback;
         [SerializeField] private float _powerupDuration = 5.0f;
@@ -27,19 +28,24 @@ namespace _Code.Apple
             {
                 return;
             }
-            
+
             if (_targetTag == "")
             {
-                _colorChangeCallback?.Raise(_appleColor);
-                _powerupCallback?.Raise(_powerupDuration);
+                ResolveCallbacks();
                 return;
             }
-            
+
             if (other.CompareTag(_targetTag))
             {
-                _colorChangeCallback?.Raise(_appleColor);
-                _powerupCallback?.Raise(_powerupDuration);
+                ResolveCallbacks();
             }
+        }
+
+        private void ResolveCallbacks()
+        {
+            _colorChangeCallback?.Raise(_appleColor);
+            _powerupCallback?.Raise(_powerupDuration);
+            Destroy(this.gameObject);
         }
     }
 }
