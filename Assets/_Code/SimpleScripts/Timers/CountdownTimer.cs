@@ -1,4 +1,5 @@
-﻿using _Code.Scriptables.SimpleValues;
+﻿using _Code.CustomEvents.VoidEvent;
+using _Code.Scriptables.SimpleValues;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,7 +11,6 @@ namespace _Code.SimpleScripts.Timers
         [SerializeField] private bool _repeats;
         [SerializeField] private FloatValue _timeRemaining;
         [SerializeField] private UnityEvent _onTimerFinishedSimple;
-        [SerializeField] private CustomEvents.VoidEvent.VoidEvent _onTimerFinishedGlobal;
         private bool _isRunning = false;
         private float _timerIntenal = 0;
 
@@ -72,7 +72,6 @@ namespace _Code.SimpleScripts.Timers
                 }
 
                 _onTimerFinishedSimple?.Invoke();
-                _onTimerFinishedGlobal?.Raise();
             }
             
             if (!_isRunning)

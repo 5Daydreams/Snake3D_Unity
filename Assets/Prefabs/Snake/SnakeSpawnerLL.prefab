@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
-  distanceBetweenNodes: 0.2
+  distanceBetweenNodes: 0.1
   debugColorSelection: {r: 1, g: 0, b: 0, a: 0.6117647}
 --- !u!114 &5313608300570339569
 MonoBehaviour:

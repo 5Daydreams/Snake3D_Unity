@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaypointDropper: {fileID: 869095396084255636}
   Renderer: {fileID: 1483174795157009791}
+  CurrentNodeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2945553933160734781
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,6 +73,8 @@ GameObject:
   - component: {fileID: 5733330195359501872}
   - component: {fileID: 1483174795157009791}
   - component: {fileID: 4567337735356687808}
+  - component: {fileID: 8850356075853703821}
+  - component: {fileID: 3155983458145007416}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Player
@@ -155,3 +158,32 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8850356075853703821
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945553933160734781}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3155983458145007416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945553933160734781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16819b9df8cdd294baf23938d128ba3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1241669219798450131}

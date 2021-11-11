@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5265988271728000890}
   - component: {fileID: 5265988271728000893}
   - component: {fileID: 1151756309604523111}
+  - component: {fileID: 3766753884584979911}
+  - component: {fileID: 876436593336263338}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -93,7 +95,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5265988271728000640}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -128,7 +130,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _onTimerFinishedGlobal: {fileID: 0}
 --- !u!114 &5265988271728000893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +182,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30aef730f0fda2449e2617bf053f1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetTag: 
-  _stoneCollisionCallback: {fileID: 0}
+  _targetTag: Player
+  _stoneCollisionCallback: {fileID: 11400000, guid: beac2ce3b25664543b28dbecf25c066c, type: 2}
+--- !u!114 &3766753884584979911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988271728000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8951f5e7ee428b9886c32ac1f45494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetTag: Player
+--- !u!114 &876436593336263338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988271728000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16819b9df8cdd294baf23938d128ba3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 5265988272565047588}
 --- !u!1 &5265988272565047588
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 5265988272565047588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 5265988271728000641}
   m_Father: {fileID: 0}
