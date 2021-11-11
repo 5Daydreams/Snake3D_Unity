@@ -36,6 +36,7 @@ namespace _Code.Player
             {
                 if (i == 0 && snakeBody.Head == null)
                 {
+                    OnHeadDestroyed();
                     snakeBody.Head = snakeBody.GetNodeAtIndex(1);
                 }
                 
@@ -51,6 +52,17 @@ namespace _Code.Player
                 // Not necessary - snake is dead if count == 0 though
                 Destroy(this);
             }
+        }
+
+        public void OnHeadDestroyed()
+        {
+            if (snakeBody.Head == null)
+            {
+                return;
+            }
+            
+            snakeBody.Head.DisableAllColliders();
+            Destroy(snakeBody.Head.gameObject);
         }
 
 

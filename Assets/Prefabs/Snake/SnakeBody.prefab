@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaypointDropper: {fileID: 869095396084255636}
-  Renderer: {fileID: 1483174795157009791}
+  meshRenderer: {fileID: 1483174795157009791}
+  collider: {fileID: 4567337735356687808}
   CurrentNodeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2945553933160734781
 GameObject:
@@ -75,6 +76,7 @@ GameObject:
   - component: {fileID: 4567337735356687808}
   - component: {fileID: 8850356075853703821}
   - component: {fileID: 3155983458145007416}
+  - component: {fileID: 5568474804303014887}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Player
@@ -187,3 +189,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1241669219798450131}
+--- !u!114 &5568474804303014887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945553933160734781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ef9347e551d0949822861d5e63cf07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetTags:
+  - Rock
+  _destroyOther: 0
+  _destroySelf: 1
+  _onTriggerEnterCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: beac2ce3b25664543b28dbecf25c066c, type: 2}
+        m_TargetAssemblyTypeName: _Code.CustomEvents.VoidEvent.VoidEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

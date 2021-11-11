@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4112523162666899765}
   - component: {fileID: 4112523162666899762}
   - component: {fileID: 5313608300570339569}
+  - component: {fileID: 1882172135482853658}
   m_Layer: 0
   m_Name: SnakeSpawnerLL
   m_TagString: Untagged
@@ -84,6 +85,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: _Code.Player.SnakeManagerLL, Assembly-CSharp
         m_MethodName: NewHeadColor
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1882172135482853658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112523162666899760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b410775016764ffbaceb8da3847867da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 5beba26a7d27bef498d02082f5b23083, type: 2}
+  UnityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4112523162666899762}
+        m_TargetAssemblyTypeName: _Code.Player.SnakeManagerLL, Assembly-CSharp
+        m_MethodName: OnHeadDestroyed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

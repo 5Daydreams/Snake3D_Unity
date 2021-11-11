@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _Code.CustomEvents.VoidEvent;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,10 +8,11 @@ namespace _Code.SimpleScripts.BasicConditionTriggers
     [RequireComponent(typeof(Collider))]
     public class TriggerOnCollision : MonoBehaviour
     {
-        [Tooltip("Leave as empty string if no tag is required")]
-        [SerializeField] private string _targetTag = "";
+        [Tooltip("Leave as empty list if no tag is required")] 
+        [SerializeField] private List<string> _targetTags;
         [SerializeField] private bool _destroyOther;
         [SerializeField] private bool _destroySelf;
+        [Space]
         [SerializeField] private UnityEvent _onTriggerEnterCallback;
 
         private void OnTriggerEnter(Collider other)
@@ -20,15 +22,18 @@ namespace _Code.SimpleScripts.BasicConditionTriggers
                 return;
             }
 
-            if (_targetTag == "")
+            if (_targetTags.Count == 0)
             {
                 ResolveCallbacks(other);
                 return;
             }
 
-            if (other.CompareTag(_targetTag))
+            foreach (var collisionTag in _targetTags)
             {
-                ResolveCallbacks(other);
+                if (other.CompareTag(collisionTag))
+                {
+                    ResolveCallbacks(other);
+                }
             }
         }
 
@@ -40,7 +45,7 @@ namespace _Code.SimpleScripts.BasicConditionTriggers
             {
                 Destroy(other.gameObject);
             }
-            
+
             if (_destroySelf)
             {
                 Destroy(this.gameObject);

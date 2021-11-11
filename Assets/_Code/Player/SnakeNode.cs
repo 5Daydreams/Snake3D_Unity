@@ -10,7 +10,8 @@ namespace _Code.Player
     {
         public SnakeNode Next { get; set; }
         public WaypointDropper WaypointDropper;
-        [SerializeField] private MeshRenderer Renderer;
+        [SerializeField] private MeshRenderer meshRenderer;
+        [SerializeField] private Collider collider;
         
         [HideInInspector] public Color CurrentNodeColor;
         private MaterialPropertyBlock mpb;
@@ -18,7 +19,7 @@ namespace _Code.Player
 
         private void Awake()
         {
-            CurrentNodeColor = Renderer.sharedMaterial.color;
+            CurrentNodeColor = meshRenderer.sharedMaterial.color;
         }
 
         public MaterialPropertyBlock Mpb
@@ -37,7 +38,17 @@ namespace _Code.Player
         {
             CurrentNodeColor = thing;
             Mpb.SetColor(ColorPropertyID, CurrentNodeColor);
-            Renderer.SetPropertyBlock(Mpb);
+            meshRenderer.SetPropertyBlock(Mpb);
+        }
+
+        public void DisableAllColliders()
+        {
+            if (Next != null)
+            {
+                Next.DisableAllColliders();
+            }
+
+            this.collider.enabled = false;
         }
     }
 }
