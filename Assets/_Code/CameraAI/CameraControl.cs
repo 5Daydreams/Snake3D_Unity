@@ -12,6 +12,11 @@ namespace _Code.CameraAI
 
         void LateUpdate()
         {
+            if (target == null)
+            {
+                return;
+            }
+            
             AdjustRotation();
             AdjustPositioning();
         }

@@ -34,6 +34,11 @@ namespace _Code.Player
 
             for (int i = 0; i < snakeBody.Count; i++)
             {
+                if (i == 0 && snakeBody.Head == null)
+                {
+                    snakeBody.Head = snakeBody.GetNodeAtIndex(1);
+                }
+                
                 if (snakeBody.GetNodeAtIndex(i) == null)
                 {
                     snakeBody.RemoveAt(i);
