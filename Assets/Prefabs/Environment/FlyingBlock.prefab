@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5265988271728000890}
   - component: {fileID: 5265988271728000893}
   - component: {fileID: 1151756309604523111}
-  - component: {fileID: 3766753884584979911}
   - component: {fileID: 876436593336263338}
+  - component: {fileID: 5460377604843268759}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -184,19 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTag: Player
   _stoneCollisionCallback: {fileID: 11400000, guid: beac2ce3b25664543b28dbecf25c066c, type: 2}
---- !u!114 &3766753884584979911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5265988271728000640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d8951f5e7ee428b9886c32ac1f45494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetTag: Player
 --- !u!114 &876436593336263338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +197,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 5265988272565047588}
+--- !u!114 &5460377604843268759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988271728000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ef9347e551d0949822861d5e63cf07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetTag: Player
+  _destroyOther: 1
+  _destroySelf: 0
+  _onTriggerEnterCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: beac2ce3b25664543b28dbecf25c066c, type: 2}
+        m_TargetAssemblyTypeName: _Code.CustomEvents.VoidEvent.VoidEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5265988272565047588
 GameObject:
   m_ObjectHideFlags: 0

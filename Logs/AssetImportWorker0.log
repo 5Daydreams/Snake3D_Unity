@@ -194,3 +194,148 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002125 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.889 seconds
+Domain Reload Profiling:
+	ReloadAssembly (890ms)
+		BeginReloadAssembly (93ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (745ms)
+			LoadAssemblies (67ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (226ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (325ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (235ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 67.4 MB.
+System memory in use after: 67.5 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1888.
+Total: 2.230900 ms (FindLiveObjects: 0.121500 ms CreateObjectMapping: 0.038300 ms MarkObjects: 2.057600 ms  DeleteObjects: 0.012700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 239.524480 seconds.
+  path: Assets/Prefabs/Environment/Environment.prefab
+  artifactKey: Guid(c4300f6ed7cc8664d86d5ba51c4e3f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Environment/Environment.prefab using Guid(c4300f6ed7cc8664d86d5ba51c4e3f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84175d58a7efe8ad5de33a23641a2fff') in 0.094707 seconds 
+  Import took 0.096862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.076841 seconds.
+  path: Assets/Prefabs/Environment/FlyingBlock.prefab
+  artifactKey: Guid(1eda39afc8bd01b438a216e7b8bf3b30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Environment/FlyingBlock.prefab using Guid(1eda39afc8bd01b438a216e7b8bf3b30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd05a69c0b9395a34951b78bbe6d1073e') in 0.045165 seconds 
+  Import took 0.047245 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.308357 seconds.
+  path: Assets/Blink/Art/Textures/StylizedDesertTextures/Rocks_1_Sand_3/Rock_1_Sand_3.mat
+  artifactKey: Guid(ce3f0d46186f9384ab5a022a44a4082e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedDesertTextures/Rocks_1_Sand_3/Rock_1_Sand_3.mat using Guid(ce3f0d46186f9384ab5a022a44a4082e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68795f4d838431eb56fb0b10aa4e923e') in 0.246590 seconds 
+  Import took 0.248749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Normal.png
+  artifactKey: Guid(c4e78757e32cc8d4480c0e97328f3740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Normal.png using Guid(c4e78757e32cc8d4480c0e97328f3740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d5539fcdb1ed20ec2ebc9d06d0bb697') in 0.092741 seconds 
+  Import took 0.094735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_AmbientOcclusion.png
+  artifactKey: Guid(9edcfeba3ab351f43997afcb294a948a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_AmbientOcclusion.png using Guid(9edcfeba3ab351f43997afcb294a948a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad6bd3bb6d186d5537cb15b6f73bc523') in 0.049838 seconds 
+  Import took 0.051721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.terrainlayer
+  artifactKey: Guid(d03202bc164da2c4f935241fc42dbffa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.terrainlayer using Guid(d03202bc164da2c4f935241fc42dbffa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ec93e684f07f431b30f9c8f8085b63') in 0.051372 seconds 
+  Import took 0.053345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000129 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Roughness.png
+  artifactKey: Guid(f386abe775e9a57459e8aeba11ad0fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Roughness.png using Guid(f386abe775e9a57459e8aeba11ad0fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a39fc4ccfaf75f9378121c3d24f18c4') in 0.066596 seconds 
+  Import took 0.068529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Emissive.png
+  artifactKey: Guid(5f891bae67f7d304d9a61acaa881a263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Emissive.png using Guid(5f891bae67f7d304d9a61acaa881a263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b99c3bde16865d6b70c29c7045b752') in 0.048801 seconds 
+  Import took 0.050762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Height.png
+  artifactKey: Guid(b3085d568386ce146bb165bc91306590) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_Height.png using Guid(b3085d568386ce146bb165bc91306590) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d7149cecd40b0980ea5178db74a8d3') in 0.054734 seconds 
+  Import took 0.056662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.mat
+  artifactKey: Guid(a74af49949acb0945b8396d6fa7b0bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.mat using Guid(a74af49949acb0945b8396d6fa7b0bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9853ff2d0045432586587be785f2732') in 0.020664 seconds 
+  Import took 0.022684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_BaseColor.png
+  artifactKey: Guid(7f00d79e8f56b1b47b2b2f34c1d22cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1_BaseColor.png using Guid(7f00d79e8f56b1b47b2b2f34c1d22cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab7f3b5cb21dc135f2c8a63d8c73bf46') in 0.010075 seconds 
+  Import took 0.012231 seconds .
+
