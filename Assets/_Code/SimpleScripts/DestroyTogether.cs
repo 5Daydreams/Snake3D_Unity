@@ -1,14 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyTogether : MonoBehaviour
+namespace _Code.SimpleScripts
 {
-    [SerializeField] private GameObject _target;
-
-    private void OnDestroy()
+    public class DestroyTogether : MonoBehaviour
     {
-        Destroy(_target);
+        [SerializeField] private GameObject _target;
+
+        private void OnDestroy()
+        {
+            Destroy(_target);
+        }
     }
 }

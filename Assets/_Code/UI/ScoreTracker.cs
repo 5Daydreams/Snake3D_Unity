@@ -1,45 +1,46 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using _Code.Scriptables.SimpleValues;
+using _Code.Scriptables.TrackableValue;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
-public class ScoreTracker : MonoBehaviour
+namespace _Code.UI
 {
-    [SerializeField] private TrackableInt _scoreValue;
-    private Text _textField;
-
-    private void Awake()
+    [RequireComponent(typeof(Text))]
+    public class ScoreTracker : MonoBehaviour
     {
-        if (_scoreValue == null)
+        [SerializeField] private TrackableInt _scoreValue;
+        private Text _textField;
+
+        private void Awake()
         {
-            Debug.LogError("No Score value assigned to be tracked.");
-            return;
+            if (_scoreValue == null)
+            {
+                Debug.LogError("No Score value assigned to be tracked.");
+                return;
+            }
+
+            _textField = this.GetComponent<Text>();
         }
 
-        _textField = this.GetComponent<Text>();
-    }
+        private void OnEnable()
+        {
+            _scoreValue.CallbackOnValueChanged.AddListener(AddToPlayerCurrentScore);
+            _scoreValue.SetValue(0);
+        }
 
-    private void OnEnable()
-    {
-        _scoreValue.CallbackOnValueChanged.AddListener(OverwritePreviousScore);
-        _scoreValue.SetValue(0);
-    }
+        private void OnDisable()
+        {
+            _scoreValue.CallbackOnValueChanged.RemoveListener(AddToPlayerCurrentScore);
+        }
 
-    private void OnDisable()
-    {
-        _scoreValue.CallbackOnValueChanged.RemoveListener(OverwritePreviousScore);
-    }
+        private void AddToPlayerCurrentScore(int newScore)
+        {
+            // Still need to do some math here
+            OverwritePreviousScore(newScore);
+        }
 
-    private void AddToPlayerCurrentScore(int newScore)
-    {
-        _textField.text = newScore.ToString();
-    }
-
-    private void OverwritePreviousScore(int eventValue)
-    {
-        _textField.text = eventValue.ToString();
+        private void OverwritePreviousScore(int eventValue)
+        {
+            _textField.text = eventValue.ToString();
+        }
     }
 }

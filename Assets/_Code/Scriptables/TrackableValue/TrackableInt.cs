@@ -1,20 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
-namespace _Code.Scriptables.SimpleValues
+namespace _Code.Scriptables.TrackableValue
 {
     [CreateAssetMenu(fileName = "IntTrackableValue",menuName = "CustomScriptables/TrackableValue/Int")]
-    public class TrackableInt : ScriptableObject
+    public class TrackableInt : Trackable<int>
     {
-        [SerializeField] private int _value;
-        [HideInInspector] public UnityEvent<int> CallbackOnValueChanged;
-
-        public void SetValue(int overwrite)
-        {
-            _value = overwrite;
-            CallbackOnValueChanged.Invoke(_value);
-        }
-
         public void AddToValue(int addingValue)
         {
             SetValue(_value + addingValue);

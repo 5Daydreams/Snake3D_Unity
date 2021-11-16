@@ -1,35 +1,35 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
-public class DirectionLine : MonoBehaviour
+namespace _Code.Player
 {
-    [SerializeField] private float _lineRange;
-    private LineRenderer _lineRenderer;
-    private float _renderDistance = 0;
-
-    private void Awake()
+    [RequireComponent(typeof(LineRenderer))]
+    public class DirectionLine : MonoBehaviour
     {
-        _lineRenderer = this.GetComponent<LineRenderer>();
-    }
+        [SerializeField] private float _lineRange;
+        private LineRenderer _lineRenderer;
+        private float _renderDistance = 0;
 
-    void Update()
-    {
-        _lineRenderer.SetPosition(0, this.transform.position);
-        
-        float targetDistance = _lineRange;
-
-        RaycastHit info = new RaycastHit();
-        if (Physics.Raycast(transform.position, transform.forward, out info, _lineRange))
+        private void Awake()
         {
-            targetDistance = info.distance;
+            _lineRenderer = this.GetComponent<LineRenderer>();
         }
+
+        void Update()
+        {
+            _lineRenderer.SetPosition(0, this.transform.position);
         
-        _renderDistance = Mathf.Min(targetDistance, _lineRange);
-        Vector3 predictionLineEndPosition = this.transform.position + transform.forward * _renderDistance;
+            float targetDistance = _lineRange;
+
+            RaycastHit info = new RaycastHit();
+            if (Physics.Raycast(transform.position, transform.forward, out info, _lineRange))
+            {
+                targetDistance = info.distance;
+            }
         
-        _lineRenderer.SetPosition(1, predictionLineEndPosition);
+            _renderDistance = Mathf.Min(targetDistance, _lineRange);
+            Vector3 predictionLineEndPosition = this.transform.position + transform.forward * _renderDistance;
+        
+            _lineRenderer.SetPosition(1, predictionLineEndPosition);
+        }
     }
 }

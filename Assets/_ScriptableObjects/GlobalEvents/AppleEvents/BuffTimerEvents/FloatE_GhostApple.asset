@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a5185e3a66344458d15d9d8d0480eb, type: 3}
   m_Name: FloatE_GhostApple
   m_EditorClassIdentifier: 
-  useInspectorValue: 1
-  inspectorValue: 5
+  inspectorValue: 10
