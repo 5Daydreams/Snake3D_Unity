@@ -1,6 +1,7 @@
 ﻿using System;
 using _Code.CustomEvents.ColorEvent;
 using _Code.CustomEvents.FloatEvent;
+using _Code.CustomEvents.IntEvent;
 using _Code.CustomEvents.VoidEvent;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace _Code.Apple
         [SerializeField] private ColorEvent _colorChangeCallback;
         [SerializeField] private FloatEvent _powerupCallback;
         [SerializeField] private float _powerupDuration = 5.0f;
+        [SerializeField] private IntEvent _scoreCallback;
+        [SerializeField] private int _scoreValue = 1;
         private Color _appleColor;
 
         private void Awake()
@@ -43,6 +46,12 @@ namespace _Code.Apple
 
         private void ResolveCallbacks()
         {
+            if (_scoreCallback == null)
+            {
+                Debug.LogError("Apple has no score value associated!");
+            }
+            
+            _scoreCallback?.Raise(_scoreValue);
             _colorChangeCallback?.Raise(_appleColor);
             _powerupCallback?.Raise(_powerupDuration);
             Destroy(this.gameObject);

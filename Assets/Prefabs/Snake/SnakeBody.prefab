@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaypointDropper: {fileID: 869095396084255636}
   meshRenderer: {fileID: 1483174795157009791}
-  collider: {fileID: 4567337735356687808}
+  nodeCollider: {fileID: 4567337735356687808}
   CurrentNodeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2945553933160734781
 GameObject:
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTags:
   - Rock
+  - Player
   _destroyOther: 0
   _destroySelf: 1
   _onTriggerEnterCallback:

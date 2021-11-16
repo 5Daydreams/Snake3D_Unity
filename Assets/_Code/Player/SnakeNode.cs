@@ -11,7 +11,7 @@ namespace _Code.Player
         public SnakeNode Next { get; set; }
         public WaypointDropper WaypointDropper;
         [SerializeField] private MeshRenderer meshRenderer;
-        [SerializeField] private Collider collider;
+        [SerializeField] private Collider nodeCollider;
         
         [HideInInspector] public Color CurrentNodeColor;
         private MaterialPropertyBlock mpb;
@@ -48,7 +48,7 @@ namespace _Code.Player
                 Next.DisableAllColliders();
             }
 
-            this.collider.enabled = false;
+            this.nodeCollider.enabled = false;
         }
     }
 }

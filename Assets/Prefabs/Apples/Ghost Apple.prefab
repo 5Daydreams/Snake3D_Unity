@@ -39,9 +39,5 @@ PrefabInstance:
       propertyPath: _powerupCallback
       value: 
       objectReference: {fileID: 11400000, guid: e6d8513a7d90aac459ab51913085ca0a, type: 2}
-    - target: {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
-      propertyPath: _powerupDuration
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}

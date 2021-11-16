@@ -7,6 +7,7 @@ namespace _Code.Geometry
     {
         [SerializeField] private Vector3 _centerPos = Vector3.zero;
         [SerializeField] private Vector3 _size = Vector3.one;
+        [SerializeField] private bool _enableGizmo;
 
         public Vector3 GetRandomPositionInside()
         {
@@ -24,6 +25,11 @@ namespace _Code.Geometry
 
         private void OnDrawGizmos()
         {
+            if (!_enableGizmo)
+            {
+                return;
+            }
+            
             Gizmos.DrawWireCube(this.transform.position + _centerPos,_size);
         }
     }

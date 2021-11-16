@@ -323,3 +323,5 @@ MonoBehaviour:
   _colorChangeCallback: {fileID: 11400000, guid: cda6548d2539b634882ca8cfffe11ba7, type: 2}
   _powerupCallback: {fileID: 0}
   _powerupDuration: 5
+  _scoreCallback: {fileID: 11400000, guid: 4604da107d5b7e44c9c4ec84a3f0564f, type: 2}
+  _scoreValue: 5

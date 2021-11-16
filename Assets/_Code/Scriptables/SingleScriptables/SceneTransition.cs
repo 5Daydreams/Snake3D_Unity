@@ -8,18 +8,16 @@ namespace _Code.Scriptables.SingleScriptables
     [CreateAssetMenu(fileName = "NewSceneTransition", menuName = "CustomScriptables/SceneTransition")]
     public class SceneTransition : ScriptableObject
     {
-        [SerializeField] private SceneAsset _sceneReference;
-        [SerializeField] private bool _onlyTransition;
-    
-        public void ChangeScene()
+        [SerializeField] private string _defaultSceneValue;
+      
+        public void ChangeToScene()
         {
-            if (_onlyTransition)
-            {
-                if (SceneManager.GetActiveScene().name == _sceneReference.name)
-                    Debug.LogError("Error: this is a transition-only scene");
-            }
-            
-            SceneManager.LoadScene(_sceneReference.name);
+            SceneManager.LoadScene(_defaultSceneValue);
+        }
+
+        public void ChangeToScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

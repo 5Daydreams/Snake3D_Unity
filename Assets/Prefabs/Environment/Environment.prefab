@@ -44,7 +44,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 150, z: 1}
+  m_Size: {x: 150, y: 150, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2127833016
 MonoBehaviour:
@@ -124,7 +124,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 150, z: 1}
+  m_Size: {x: 150, y: 150, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &311438800
 MonoBehaviour:
@@ -297,7 +297,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 1, z: 150}
+  m_Size: {x: 150, y: 5, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1855969281
 MonoBehaviour:
@@ -377,7 +377,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 150, z: 150}
+  m_Size: {x: 5, y: 150, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1297801194
 MonoBehaviour:
@@ -457,7 +457,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 1, z: 150}
+  m_Size: {x: 150, y: 5, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1616377617
 MonoBehaviour:
@@ -537,7 +537,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 150, z: 150}
+  m_Size: {x: 5, y: 150, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1227493040
 MonoBehaviour:
@@ -1424,6 +1424,10 @@ PrefabInstance:
     - target: {fileID: 2840465702320154355, guid: 72badf4d66304394caf9f50b1b300d5c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840465702320154365, guid: 72badf4d66304394caf9f50b1b300d5c, type: 3}
+      propertyPath: _enableGizmo
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2840465702320154366, guid: 72badf4d66304394caf9f50b1b300d5c, type: 3}
       propertyPath: m_RootOrder

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 529d1b21357964948a39c34e624151ce, type: 3}
-  m_Name: ToGameScene
+  m_Name: SceneChange
   m_EditorClassIdentifier: 
   _sceneReference: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
   _onlyTransition: 0
