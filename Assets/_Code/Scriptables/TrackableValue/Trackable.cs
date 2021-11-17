@@ -8,10 +8,14 @@ namespace _Code.Scriptables.TrackableValue
         [SerializeField] protected T _value;
         [HideInInspector] public UnityEvent<T> CallbackOnValueChanged;
 
-        public void SetValue(T overwrite)
+        public T Value
         {
-            _value = overwrite;
-            CallbackOnValueChanged.Invoke(_value);
+            get => _value;
+            set
+            {
+                _value = value;
+                CallbackOnValueChanged.Invoke(_value);
+            }
         }
     }
 }

@@ -9,8 +9,8 @@ namespace _Code.UI
     {
         [SerializeField] private Image _buffImageFill;
         [SerializeField] private Text _buffTimeText;
+        [SerializeField] private TrackableFloat _currentBuffTimer;
         private float _buffStartingTime = 1.0f;
-        private float _currentBuffTime;
 
         private void Awake()
         {
@@ -20,22 +20,22 @@ namespace _Code.UI
         public void ApplyBuff(float duration)
         {
             _buffStartingTime = duration;
-            _currentBuffTime = duration;
+            _currentBuffTimer.Value = duration;
             
             SetGraphicsActive(true);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            if (_currentBuffTime <= 0)
+            if (_currentBuffTimer.Value <= 0)
             {
                 SetGraphicsActive(false);
                 return;
             }
             
-            RefreshTimerSprite(_currentBuffTime);
-            RefreshTimerText(_currentBuffTime);
-            _currentBuffTime -= Time.deltaTime;
+            RefreshTimerSprite(_currentBuffTimer.Value);
+            RefreshTimerText(_currentBuffTimer.Value);
+            _currentBuffTimer.Value -= Time.deltaTime;
         }
 
         private void RefreshTimerSprite(float value)

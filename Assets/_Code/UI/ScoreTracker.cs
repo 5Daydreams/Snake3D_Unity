@@ -24,7 +24,7 @@ namespace _Code.UI
         private void OnEnable()
         {
             _scoreValue.CallbackOnValueChanged.AddListener(AddToPlayerCurrentScore);
-            _scoreValue.SetValue(0);
+            _scoreValue.Value = 0;
         }
 
         private void OnDisable()

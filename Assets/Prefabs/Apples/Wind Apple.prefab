@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6946410268866593747, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
       propertyPath: m_Name
-      value: Apple (2)
+      value: Wind Apple
       objectReference: {fileID: 0}
     - target: {fileID: 6946410268866593749, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -35,5 +35,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: _scoreValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
+      propertyPath: _powerupCallback
+      value: 
+      objectReference: {fileID: 11400000, guid: d42b1d4afd6b41341ade0a87158b8956, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}

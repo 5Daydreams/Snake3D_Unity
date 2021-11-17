@@ -5,7 +5,7 @@ namespace _Code.Geometry
 {
     public class StraightLineMovement : MonoBehaviour
     {
-        [Range(2.0f,10.0f)] [SerializeField] private float _speed = 5.0f;
+        [Range(10.0f,20.0f)] [SerializeField] private float _speed = 15.0f;
         public Vector3 Direction = Vector3.one;
 
         private void Start()

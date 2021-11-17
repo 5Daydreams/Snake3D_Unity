@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5265988271728000895}
   - component: {fileID: 5265988271728000894}
   - component: {fileID: 5265988271728000892}
-  - component: {fileID: 5265988271728000890}
-  - component: {fileID: 5265988271728000893}
   - component: {fileID: 876436593336263338}
+  - component: {fileID: 4968517072654054580}
+  - component: {fileID: 1371402337617119765}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Rock
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5265988271728000890
+--- !u!114 &876436593336263338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,13 +107,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 5265988271728000640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a614f2828e43b2aeb56a101323396c, type: 3}
+  m_Script: {fileID: 11500000, guid: 16819b9df8cdd294baf23938d128ba3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 0
-  _repeats: 0
-  _timeRemaining: {fileID: 0}
-  _onTimerFinishedSimple:
+  _target: {fileID: 5265988272565047588}
+--- !u!114 &4968517072654054580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988271728000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6913b4ddfcc04c0f8137162840fdc9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackable: {fileID: 11400000, guid: bb65c4f83198e6148830b15b389d0dbd, type: 2}
+  _callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1371402337617119765}
+        m_TargetAssemblyTypeName: _Code.FlyingRocks.FloatConditionEventTrigger, Assembly-CSharp
+        m_MethodName: TryTriggerEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1371402337617119765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265988271728000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b2102b5de74d24896446380c617a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _biggerThan: 0
+  _callbackOnTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5265988271728000892}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _callbackOnFalse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5265988271728000892}
@@ -128,59 +182,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &5265988271728000893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5265988271728000640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c30170f6621433fbe97f55ea3766563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: e6d8513a7d90aac459ab51913085ca0a, type: 2}
-  UnityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5265988271728000892}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5265988271728000890}
-        m_TargetAssemblyTypeName: _Code.SimpleScripts.Timers.CountdownTimer, Assembly-CSharp
-        m_MethodName: StartFromGivenTime
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &876436593336263338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5265988271728000640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16819b9df8cdd294baf23938d128ba3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 5265988272565047588}
 --- !u!1 &5265988272565047588
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ GameObject:
   - component: {fileID: 5265988272565047584}
   - component: {fileID: 3850550327926919874}
   m_Layer: 0
-  m_Name: FlyingBlock
+  m_Name: FlyingRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,5 +242,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32942b3a1cea86d44a7553f53f495ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 13
   Direction: {x: 1, y: 1, z: 1}

@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2160663243055710636, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _trackableToCountdown
+      value: 
+      objectReference: {fileID: 11400000, guid: bb65c4f83198e6148830b15b389d0dbd, type: 2}
+    - target: {fileID: 2160663243055710636, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _callbackOnTimerFinished.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160663243055710636, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _callbackOnTimerFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160663243055710636, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _callbackOnTimerFinished.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681530076581150720, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _trackable
+      value: 
+      objectReference: {fileID: 11400000, guid: bb65c4f83198e6148830b15b389d0dbd, type: 2}
+    - target: {fileID: 4484318509409423112, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _currentBuffTimer
+      value: 
+      objectReference: {fileID: 11400000, guid: bb65c4f83198e6148830b15b389d0dbd, type: 2}
     - target: {fileID: 4484318509409423113, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -103,5 +127,9 @@ PrefabInstance:
       propertyPath: _gameEvent
       value: 
       objectReference: {fileID: 11400000, guid: e6d8513a7d90aac459ab51913085ca0a, type: 2}
+    - target: {fileID: 6604753985983475949, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}
+      propertyPath: _currentBuffTimer
+      value: 
+      objectReference: {fileID: 11400000, guid: bb65c4f83198e6148830b15b389d0dbd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e8f1ea394c83d43a2f5f00aae747fd, type: 3}

@@ -7,7 +7,7 @@ namespace _Code.Scriptables.TrackableValue
     {
         public void AddToValue(float addingValue)
         {
-            SetValue(_value + addingValue);
+            Value = _value + addingValue;
         }
     }
 }
