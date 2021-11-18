@@ -504,6 +504,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pullSpeed: 10
+  _ignoreLayers:
+  - Wall
+  - Rock
 --- !u!114 &6208677934799216447
 MonoBehaviour:
   m_ObjectHideFlags: 0
