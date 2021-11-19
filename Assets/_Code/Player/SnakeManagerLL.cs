@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using _2DVersion._Code;
 using _Code.LinkedList;
+using _Code.Scriptables.TrackableValue;
 using UnityEngine;
 
 namespace _Code.Player
 {
     public class SnakeManagerLL : MonoBehaviour
     {
-        [SerializeField] private List<SnakeNode> bodyNodesSpawnQueue = new List<SnakeNode>();
-        [SerializeField] private float distanceBetweenNodes = 0.2f;
-        [SerializeField] private Color debugColorSelection;
+        [SerializeField] private List<SnakeNode> _bodyNodesSpawnQueue = new List<SnakeNode>();
+        [SerializeField] private TrackableInt _snakeSize;
+        [SerializeField] private float _distanceBetweenNodes = 0.2f;
 
-        private CustomLinkedList<SnakeNode> snakeBody = new CustomLinkedList<SnakeNode>();
-        private float countUp = 0;
+        private CustomLinkedList<SnakeNode> _snakeBody = new CustomLinkedList<SnakeNode>();
+        private float _countUp = 0;
 
         private void Start()
         {
@@ -27,27 +28,27 @@ namespace _Code.Player
 
         private void ManageSnakeBody()
         {
-            if (bodyNodesSpawnQueue.Count > 0)
+            if (_bodyNodesSpawnQueue.Count > 0)
             {
                 CreateBodyParts();
             }
 
-            for (int i = 0; i < snakeBody.Count; i++)
+            for (int i = 0; i < _snakeBody.Count; i++)
             {
-                if (i == 0 && snakeBody.Head == null)
+                if (i == 0 && _snakeBody.Head == null)
                 {
                     OnHeadDestroyed();
-                    snakeBody.Head = snakeBody.GetNodeAtIndex(1);
+                    _snakeBody.Head = _snakeBody.GetNodeAtIndex(1);
                 }
                 
-                if (snakeBody.GetNodeAtIndex(i) == null)
+                if (_snakeBody.GetNodeAtIndex(i) == null)
                 {
-                    snakeBody.RemoveAt(i);
+                    _snakeBody.RemoveAt(i);
                     i = i - 1;
                 }
             }
 
-            if (snakeBody.Count == 0)
+            if (_snakeBody.Count == 0)
             {
                 // Not necessary - snake is dead if count == 0 though
                 Destroy(this);
@@ -56,62 +57,62 @@ namespace _Code.Player
 
         public void OnHeadDestroyed()
         {
-            if (snakeBody.Head == null)
+            if (_snakeBody.Head == null)
             {
                 return;
             }
             
-            snakeBody.Head.DisableAllColliders();
-            Destroy(snakeBody.Head.gameObject);
+            _snakeBody.Head.DisableAllColliders();
+            Destroy(_snakeBody.Head.gameObject);
         }
 
 
         private void CreateBodyParts()
         {
-            if (snakeBody.Count == 0)
+            if (_snakeBody.Count == 0)
             {
-                SnakeNode firstNode = Instantiate(bodyNodesSpawnQueue[0], transform.position, transform.rotation);
+                SnakeNode firstNode = Instantiate(_bodyNodesSpawnQueue[0], transform.position, transform.rotation);
 
-                snakeBody.Add(firstNode);
-                bodyNodesSpawnQueue.RemoveAt(0);
+                _snakeBody.Add(firstNode);
+                _bodyNodesSpawnQueue.RemoveAt(0);
             }
 
-            WaypointDropper tailWPDropper = snakeBody.GetTail().WaypointDropper;
+            WaypointDropper tailWPDropper = _snakeBody.GetTail().WaypointDropper;
 
-            if (countUp == 0)
+            if (_countUp == 0)
             {
                 tailWPDropper.ClearMarkerList();
             }
 
-            countUp += Time.deltaTime;
+            _countUp += Time.deltaTime;
 
-            if (countUp >= distanceBetweenNodes)
+            if (_countUp >= _distanceBetweenNodes)
             {
-                SnakeNode newNode = Instantiate(bodyNodesSpawnQueue[0], tailWPDropper.markerList[0].position,
+                SnakeNode newNode = Instantiate(_bodyNodesSpawnQueue[0], tailWPDropper.markerList[0].position,
                     tailWPDropper.markerList[0].rotation);
 
-                snakeBody.Add(newNode);
-                bodyNodesSpawnQueue.RemoveAt(0);
+                _snakeBody.Add(newNode);
+                _bodyNodesSpawnQueue.RemoveAt(0);
                 newNode.WaypointDropper.ClearMarkerList();
-                countUp = 0;
+                _countUp = 0;
             }
         }
 
         public void AddBodyParts(SnakeNode gObj)
         {
-            bodyNodesSpawnQueue.Add(gObj);
+            _bodyNodesSpawnQueue.Add(gObj);
         }
 
         private void SnakeMovement()
         {
-            if (snakeBody.Count > 1)
+            if (_snakeBody.Count > 1)
             {
-                for (int i = 1; i < snakeBody.Count; i++)
+                for (int i = 1; i < _snakeBody.Count; i++)
                 {
-                    WaypointDropper frontNodeWPDropper = snakeBody.GetNodeAtIndex(i - 1).WaypointDropper;
+                    WaypointDropper frontNodeWPDropper = _snakeBody.GetNodeAtIndex(i - 1).WaypointDropper;
 
-                    snakeBody.GetNodeAtIndex(i).transform.position = frontNodeWPDropper.markerList[0].position;
-                    snakeBody.GetNodeAtIndex(i).transform.rotation = frontNodeWPDropper.markerList[0].rotation;
+                    _snakeBody.GetNodeAtIndex(i).transform.position = frontNodeWPDropper.markerList[0].position;
+                    _snakeBody.GetNodeAtIndex(i).transform.rotation = frontNodeWPDropper.markerList[0].rotation;
                     frontNodeWPDropper.markerList.RemoveAt(0);
                 }
             }
@@ -120,7 +121,7 @@ namespace _Code.Player
         public void NewHeadColor(Color newColour)
         {
             Color oldColor;
-            SnakeNode currentNode = snakeBody.Head;
+            SnakeNode currentNode = _snakeBody.Head;
 
             while (currentNode.Next != null)
             {
@@ -130,20 +131,6 @@ namespace _Code.Player
                 
                 currentNode = currentNode.Next;
             }
-        }
-        
-        public void SetAllBodyColours()
-        {
-            for (int i = 0; i < snakeBody.Count; i++)
-            {
-                SetBodyColorAtIndex(i);
-            }
-        }
-
-        public void SetBodyColorAtIndex(int index)
-        {
-            SnakeNode targetNode = snakeBody.GetNodeAtIndex(index);
-            targetNode.SetNodeColor(debugColorSelection);
         }
     }
 }

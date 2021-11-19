@@ -45,14 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad7afe3bd324bb68d1f5232fb98df83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyNodesSpawnQueue:
+  _bodyNodesSpawnQueue:
   - {fileID: 3708430256126097206, guid: 1b3a31f741531934da13a3c56752f279, type: 3}
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
   - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
-  - {fileID: -3949364591177839309, guid: a0a4b68e1ea761b41bdaa361f2fac3f9, type: 3}
-  distanceBetweenNodes: 0.08
-  debugColorSelection: {r: 1, g: 0, b: 0, a: 0.6117647}
+  _snakeSize: {fileID: 0}
+  _distanceBetweenNodes: 0.08
 --- !u!114 &5313608300570339569
 MonoBehaviour:
   m_ObjectHideFlags: 0

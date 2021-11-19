@@ -9,6 +9,7 @@ namespace _Code.Apple
     [RequireComponent(typeof(BoundingBox))]
     public class AppleSpawner : MonoBehaviour
     {
+        [SerializeField] private int _spawnOnStart = 5;
         [SerializeField] private List<AppleCollisionCallback> _appleList;
         [SerializeField] private List<int> _appleProbabilityFactor;
         private BoundingBox _boundingBox;
@@ -17,6 +18,11 @@ namespace _Code.Apple
         private void Awake()
         {
             _boundingBox = this.GetComponent<BoundingBox>();
+
+            for (int i = 0; i <= _spawnOnStart; i++)
+            {
+                SpawnRandomAppleInRandomPosition();
+            }
         }
 
         public void SpawnRandomAppleInRandomPosition()

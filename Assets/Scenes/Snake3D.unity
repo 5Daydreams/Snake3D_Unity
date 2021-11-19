@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667638, g: 0.48427182, b: 0.5645251, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8297325ee8091cb48b1bbbaa01d0e7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnOnStart: 0
   _appleList:
   - {fileID: 7310731546492205951, guid: ea866b3320d1b26409fe44cb33e24212, type: 3}
   - {fileID: 4970983938606409333, guid: 495cec5cad210df42a860088a27fea19, type: 3}
@@ -673,6 +674,30 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    InputReleased:
+      m_PersistentCalls:
+        m_Calls: []
+  - Description: Trigger Vacuum Pull
+    InputKey: x
+    InputHeld:
+      m_PersistentCalls:
+        m_Calls: []
+    InputTapped:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: d42b1d4afd6b41341ade0a87158b8956, type: 2}
+          m_TargetAssemblyTypeName: _Code.CustomEvents.BaseEvent.BaseGameEvent`1[[System.Single,
+            mscorlib
+          m_MethodName: Raise
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 10
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -832,7 +857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1669172487
 Transform:
   m_ObjectHideFlags: 0
