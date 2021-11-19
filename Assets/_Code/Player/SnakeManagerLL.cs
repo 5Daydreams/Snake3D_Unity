@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using _2DVersion._Code;
 using _Code.LinkedList;
 using _Code.Scriptables.TrackableValue;
@@ -16,9 +17,16 @@ namespace _Code.Player
         private CustomLinkedList<SnakeNode> _snakeBody = new CustomLinkedList<SnakeNode>();
         private float _countUp = 0;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
+        }
+
+        private IEnumerator Setup()
+        {
+            yield return null;
             CreateBodyParts();
+            yield return null;
         }
 
         // private void FixedUpdate()

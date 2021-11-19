@@ -1,26 +1,34 @@
 ﻿using System;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 namespace _Code.SimpleScripts.Timers
 {
     public abstract class TimeDistortMonoBehavior : MonoBehaviour
     {
-        private float _internalTimer;
-
-        private void OnEnable()
+        protected virtual void Start()
         {
-            float interval = Time.fixedUnscaledDeltaTime;
-            SetupCustomUpdate(interval);
+            SetupCustomUpdate();
         }
 
-        async void SetupCustomUpdate(double seconds)
+        async void SetupCustomUpdate()
         {
             while (true)
             {
-                await Task.Delay(TimeSpan.FromSeconds(seconds));
+                if (EditorApplication.isPaused)
+                {
+                    continue;
+                }
+                
+                float interval = Time.unscaledDeltaTime;
+
+                await Task.Delay(TimeSpan.FromSeconds(interval));
                 CustomFixedUpdate();
-                if (!Application.isPlaying)
+
+                bool exitCondition = !EditorApplication.isPlayingOrWillChangePlaymode;
+                
+                if (exitCondition)
                 {
                     return;
                 }

@@ -19,7 +19,7 @@ namespace _Code.Geometry
                 Direction = Vector3.one.normalized;
             }
 
-            this.transform.position += Direction * (_speed * Time.deltaTime);
+            this.transform.position += Direction * (_speed * Time.smoothDeltaTime);
         }
 
         private void OnDrawGizmosSelected()

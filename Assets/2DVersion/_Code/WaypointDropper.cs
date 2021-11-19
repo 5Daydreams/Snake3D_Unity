@@ -1,31 +1,38 @@
 using System;
 using System.Collections.Generic;
+using _Code.SimpleScripts.Timers;
 using UnityEngine;
 
 namespace _2DVersion._Code
 {
-    public class WaypointDropper : MonoBehaviour
+    public class WaypointDropper : TimeDistortMonoBehavior
     {
         [HideInInspector] public List<Waypoint> markerList = new List<Waypoint>();
-    
-        private void FixedUpdate()
+
+        protected override void CustomFixedUpdate()
         {
             UpdateMarkerList();
         }
 
+        // private void FixedUpdate()
+        // {
+        //     UpdateMarkerList();
+        // }
+
         public void UpdateMarkerList()
         {
-            markerList.Add(new Waypoint(transform.position,transform.rotation));
+            markerList.Add(new Waypoint(transform.position, transform.rotation));
         }
 
         public void ClearMarkerList()
         {
             markerList.Clear();
-            markerList.Add(new Waypoint(transform.position,transform.rotation));
+            markerList.Add(new Waypoint(transform.position, transform.rotation));
         }
     }
 
-    [Serializable] public class Waypoint
+    [Serializable]
+    public class Waypoint
     {
         public Vector3 position;
         public Quaternion rotation;
