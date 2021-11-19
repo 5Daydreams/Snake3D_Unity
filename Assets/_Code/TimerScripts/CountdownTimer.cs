@@ -6,8 +6,8 @@ namespace _Code.SimpleScripts.Timers
 {
     public class CountdownTimer : MonoBehaviour
     {
-        [SerializeField] private float startingTime;
-        [SerializeField] private bool _repeats;
+        [SerializeField] protected float startingTime;
+        [SerializeField] protected bool _repeats;
         [SerializeField] private FloatValue _timeRemaining;
         [SerializeField] private UnityEvent _onTimerFinishedSimple;
         private bool _isRunning = false;

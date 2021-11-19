@@ -64,6 +64,9 @@ MonoBehaviour:
   _onTriggerEnterCallback:
     m_PersistentCalls:
       m_Calls: []
+  _onColliderEnterCallback:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &6287005424463721144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142,6 +145,9 @@ MonoBehaviour:
   _destroyOther: 1
   _destroySelf: 0
   _onTriggerEnterCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  _onColliderEnterCallback:
     m_PersistentCalls:
       m_Calls: []
 --- !u!54 &4382471940394399229
@@ -317,6 +323,9 @@ MonoBehaviour:
   _onTriggerEnterCallback:
     m_PersistentCalls:
       m_Calls: []
+  _onColliderEnterCallback:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &7917302560254561457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -395,6 +404,9 @@ MonoBehaviour:
   _destroyOther: 1
   _destroySelf: 0
   _onTriggerEnterCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  _onColliderEnterCallback:
     m_PersistentCalls:
       m_Calls: []
 --- !u!54 &9209642251733898764
@@ -477,6 +489,9 @@ MonoBehaviour:
   _onTriggerEnterCallback:
     m_PersistentCalls:
       m_Calls: []
+  _onColliderEnterCallback:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &2111087186455090255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -557,6 +572,9 @@ MonoBehaviour:
   _onTriggerEnterCallback:
     m_PersistentCalls:
       m_Calls: []
+  _onColliderEnterCallback:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &411086911947867042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -596,7 +614,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400410153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -725,7 +743,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980028599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -856,7 +874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7775276992077184311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -878,7 +896,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7775276992489188311}
-  - component: {fileID: 5319208763674997184}
+  - component: {fileID: 166434638321232640}
+  - component: {fileID: 5979520036150015393}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -905,7 +924,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5319208763674997184
+--- !u!114 &166434638321232640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -914,7 +933,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7775276992489188310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a614f2828e43b2aeb56a101323396c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a0bf2aad2594d739406597eb22f0b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingTime: 5
@@ -932,6 +951,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _minimumRepeatTime: 2.5
+--- !u!114 &5979520036150015393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775276992489188310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095630053737d7546bb9e56e34e10be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerScore: {fileID: 11400000, guid: a5cbfe396496cd04787dc964818a63df, type: 2}
+  _interval: 50
+  _callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 166434638321232640}
+        m_TargetAssemblyTypeName: _Code.SimpleScripts.Timers.RockSpawnCountdownTimer,
+          Assembly-CSharp
+        m_MethodName: ReduceCurrentRepeatTime
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

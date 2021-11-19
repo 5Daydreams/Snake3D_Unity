@@ -5,19 +5,14 @@ using UnityEngine;
 
 namespace _2DVersion._Code
 {
-    public class WaypointDropper : TimeDistortMonoBehavior
+    public class WaypointDropper : MonoBehaviour
     {
         [HideInInspector] public List<Waypoint> markerList = new List<Waypoint>();
-
-        protected override void CustomFixedUpdate()
+        
+        private void FixedUpdate()
         {
             UpdateMarkerList();
         }
-
-        // private void FixedUpdate()
-        // {
-        //     UpdateMarkerList();
-        // }
 
         public void UpdateMarkerList()
         {

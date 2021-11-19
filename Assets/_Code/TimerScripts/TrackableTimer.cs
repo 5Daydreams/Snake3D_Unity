@@ -22,6 +22,7 @@ public class TrackableTimer : MonoBehaviour
         if (!_isRunning)
             return;
 
-        _trackableToCountdown.Value -= Time.deltaTime;
+        // _trackableToCountdown.Value -= Time.deltaTime;
+        _trackableToCountdown.Value -= Time.unscaledDeltaTime;
     }
 }

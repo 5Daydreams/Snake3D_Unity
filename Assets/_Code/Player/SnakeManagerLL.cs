@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace _Code.Player
 {
-    public class SnakeManagerLL : TimeDistortMonoBehavior
+    public class SnakeManagerLL : MonoBehaviour
     {
         [SerializeField] private List<SnakeNode> _bodyNodesSpawnQueue = new List<SnakeNode>();
         [SerializeField] private TrackableInt _snakeSize;
@@ -17,26 +17,12 @@ namespace _Code.Player
         private CustomLinkedList<SnakeNode> _snakeBody = new CustomLinkedList<SnakeNode>();
         private float _countUp = 0;
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
-        }
-
-        private IEnumerator Setup()
-        {
-            yield return null;
             CreateBodyParts();
-            yield return null;
         }
 
-        // private void FixedUpdate()
-        // {
-        //     ManageSnakeBody();
-        //     SnakeMovement();
-        // }
-
-
-        protected override void CustomFixedUpdate()
+        private void FixedUpdate()
         {
             ManageSnakeBody();
             SnakeMovement();

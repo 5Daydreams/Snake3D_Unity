@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Code.Player
 {
-    public class FreeMovement3D : TimeDistortMonoBehavior
+    public class FreeMovement3D : MonoBehaviour
     {
         [Header("Speed")] [SerializeField] private float baseSpeed;
         [SerializeField] private float boostMultiplier;
@@ -26,17 +26,11 @@ namespace _Code.Player
             SetSpeedBoost(false);
         }
 
-        protected override void CustomFixedUpdate()
+        private void FixedUpdate()
         {
             AdjustHeadRotation();
             AdjustHeadPosition();
         }
-
-        // private void FixedUpdate()
-        // {
-        //     AdjustHeadRotation();
-        //     AdjustHeadPosition();
-        // }
 
         void AdjustHeadRotation()
         {
@@ -45,18 +39,18 @@ namespace _Code.Player
 
         void AdjustHeadPosition()
         {
-            this.transform.position += direction * CurrentSpeed * Time.unscaledDeltaTime;
+            this.transform.position += direction * CurrentSpeed * Time.deltaTime;
         }
 
         public void TurnHorizontal(float angleDir)
         {
-            angleH += angleDir * turnSpeedH * Time.unscaledDeltaTime;
+            angleH += angleDir * turnSpeedH * Time.deltaTime;
             ApplyRotationToHeadTransform();
         }
 
         public void TurnVertical(float angleDir)
         {
-            angleV += angleDir * turnSpeedV * Time.unscaledDeltaTime;
+            angleV += angleDir * turnSpeedV * Time.deltaTime;
 
             angleV = Mathf.Clamp(angleV, -verticalPivotThreshold, verticalPivotThreshold);
             ApplyRotationToHeadTransform();

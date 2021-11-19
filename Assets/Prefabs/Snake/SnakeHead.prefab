@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 8
   boostMultiplier: 2.1
-  turnSpeedH: 180
-  turnSpeedV: 150
+  turnSpeedH: 210
+  turnSpeedV: 180
   verticalPivotThreshold: 85
   CurrentSpeed: 1
 --- !u!114 &311285182272947817
