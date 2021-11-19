@@ -1,8 +1,6 @@
-﻿using System;
-using _Code.CustomEvents.ColorEvent;
+﻿using _Code.CustomEvents.ColorEvent;
 using _Code.CustomEvents.FloatEvent;
 using _Code.CustomEvents.IntEvent;
-using _Code.CustomEvents.VoidEvent;
 using UnityEngine;
 
 namespace _Code.Apple

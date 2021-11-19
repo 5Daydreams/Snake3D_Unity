@@ -1,5 +1,4 @@
-﻿using _Code.CustomEvents.VoidEvent;
-using _Code.Scriptables.SimpleValues;
+﻿using _Code.Scriptables.SimpleValues;
 using UnityEngine;
 using UnityEngine.Events;
 

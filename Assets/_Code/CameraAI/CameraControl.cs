@@ -9,7 +9,7 @@ namespace _Code.CameraAI
         [SerializeField] private float tilt;
         [SerializeField] private Vector3 baseLookOffset;
         private Vector3 lookOffset;
-
+        
         void LateUpdate()
         {
             if (target == null)

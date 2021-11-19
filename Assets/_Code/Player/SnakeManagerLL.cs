@@ -2,11 +2,12 @@
 using _2DVersion._Code;
 using _Code.LinkedList;
 using _Code.Scriptables.TrackableValue;
+using _Code.SimpleScripts.Timers;
 using UnityEngine;
 
 namespace _Code.Player
 {
-    public class SnakeManagerLL : MonoBehaviour
+    public class SnakeManagerLL : TimeDistortMonoBehavior
     {
         [SerializeField] private List<SnakeNode> _bodyNodesSpawnQueue = new List<SnakeNode>();
         [SerializeField] private TrackableInt _snakeSize;
@@ -20,7 +21,14 @@ namespace _Code.Player
             CreateBodyParts();
         }
 
-        private void FixedUpdate()
+        // private void FixedUpdate()
+        // {
+        //     ManageSnakeBody();
+        //     SnakeMovement();
+        // }
+
+
+        protected override void CustomFixedUpdate()
         {
             ManageSnakeBody();
             SnakeMovement();
@@ -40,7 +48,7 @@ namespace _Code.Player
                     OnHeadDestroyed();
                     _snakeBody.Head = _snakeBody.GetNodeAtIndex(1);
                 }
-                
+
                 if (_snakeBody.GetNodeAtIndex(i) == null)
                 {
                     _snakeBody.RemoveAt(i);
@@ -61,7 +69,7 @@ namespace _Code.Player
             {
                 return;
             }
-            
+
             _snakeBody.Head.DisableAllColliders();
             Destroy(_snakeBody.Head.gameObject);
         }
@@ -128,7 +136,7 @@ namespace _Code.Player
                 oldColor = currentNode.CurrentNodeColor;
                 currentNode.SetNodeColor(newColour);
                 newColour = oldColor;
-                
+
                 currentNode = currentNode.Next;
             }
         }

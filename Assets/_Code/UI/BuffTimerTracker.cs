@@ -1,4 +1,3 @@
-using System;
 using _Code.Scriptables.TrackableValue;
 using UnityEngine;
 using UnityEngine.UI;

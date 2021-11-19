@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using _Code.Scriptables.TrackableValue;
 using UnityEngine;
 using UnityEngine.UI;

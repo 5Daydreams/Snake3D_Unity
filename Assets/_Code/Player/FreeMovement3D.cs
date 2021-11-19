@@ -1,9 +1,9 @@
-using System;
+using _Code.SimpleScripts.Timers;
 using UnityEngine;
 
 namespace _Code.Player
 {
-    public class FreeMovement3D : MonoBehaviour
+    public class FreeMovement3D : TimeDistortMonoBehavior
     {
         [Header("Speed")] [SerializeField] private float baseSpeed;
         [SerializeField] private float boostMultiplier;
@@ -15,7 +15,7 @@ namespace _Code.Player
         [HideInInspector] public float CurrentSpeed = 1.0f;
         private bool isBoosting;
         private Vector3 direction = Vector3.forward;
-    
+
         private float angleH = 0;
         private float angleV = 0;
         Quaternion rotH = Quaternion.identity;
@@ -26,11 +26,17 @@ namespace _Code.Player
             SetSpeedBoost(false);
         }
 
-        private void FixedUpdate()
+        protected override void CustomFixedUpdate()
         {
             AdjustHeadRotation();
             AdjustHeadPosition();
         }
+
+        // private void FixedUpdate()
+        // {
+        //     AdjustHeadRotation();
+        //     AdjustHeadPosition();
+        // }
 
         void AdjustHeadRotation()
         {
@@ -39,18 +45,18 @@ namespace _Code.Player
 
         void AdjustHeadPosition()
         {
-            this.transform.position += direction * CurrentSpeed * Time.deltaTime;
+            this.transform.position += direction * CurrentSpeed * Time.unscaledDeltaTime;
         }
 
         public void TurnHorizontal(float angleDir)
         {
-            angleH += angleDir * turnSpeedH * Time.deltaTime;
+            angleH += angleDir * turnSpeedH * Time.unscaledDeltaTime;
             ApplyRotationToHeadTransform();
         }
 
         public void TurnVertical(float angleDir)
         {
-            angleV += angleDir * turnSpeedV * Time.deltaTime;
+            angleV += angleDir * turnSpeedV * Time.unscaledDeltaTime;
 
             angleV = Mathf.Clamp(angleV, -verticalPivotThreshold, verticalPivotThreshold);
             ApplyRotationToHeadTransform();
@@ -63,7 +69,7 @@ namespace _Code.Player
 
             this.transform.rotation = rotH * rotV;
         }
-    
+
         public void SetSpeedBoost(bool value)
         {
             isBoosting = value;

@@ -1,5 +1,4 @@
-﻿using System;
-using _2DVersion._Code;
+﻿using _2DVersion._Code;
 using _Code.LinkedList;
 using UnityEngine;
 
