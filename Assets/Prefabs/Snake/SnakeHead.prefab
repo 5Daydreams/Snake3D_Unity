@@ -127,6 +127,7 @@ MonoBehaviour:
   turnSpeedH: 210
   turnSpeedV: 180
   verticalPivotThreshold: 85
+  turnSmoothing: 0.1
   CurrentSpeed: 1
 --- !u!114 &311285182272947817
 MonoBehaviour:
@@ -198,7 +199,19 @@ MonoBehaviour:
         m_Calls: []
     InputReleased:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4788082298980778566}
+          m_TargetAssemblyTypeName: _Code.Player.FreeMovement3D, Assembly-CSharp
+          m_MethodName: TurnHorizontal
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Description: TurnLeft
     InputKey: a
     InputHeld:
@@ -221,7 +234,19 @@ MonoBehaviour:
         m_Calls: []
     InputReleased:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4788082298980778566}
+          m_TargetAssemblyTypeName: _Code.Player.FreeMovement3D, Assembly-CSharp
+          m_MethodName: TurnHorizontal
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Description: TurnUp
     InputKey: s
     InputHeld:
@@ -244,7 +269,19 @@ MonoBehaviour:
         m_Calls: []
     InputReleased:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4788082298980778566}
+          m_TargetAssemblyTypeName: _Code.Player.FreeMovement3D, Assembly-CSharp
+          m_MethodName: TurnVertical
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Description: TurnDown
     InputKey: w
     InputHeld:
@@ -267,7 +304,19 @@ MonoBehaviour:
         m_Calls: []
     InputReleased:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4788082298980778566}
+          m_TargetAssemblyTypeName: _Code.Player.FreeMovement3D, Assembly-CSharp
+          m_MethodName: TurnVertical
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1008555174056832918
 GameObject:
   m_ObjectHideFlags: 0

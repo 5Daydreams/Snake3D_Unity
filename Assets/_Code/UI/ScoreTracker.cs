@@ -8,6 +8,7 @@ namespace _Code.UI
     public class ScoreTracker : MonoBehaviour
     {
         [SerializeField] private TrackableInt _scoreValue;
+        [SerializeField] private TrackableInt _highScoreValue;
         private Text _textField;
 
         private void Awake()
@@ -36,6 +37,11 @@ namespace _Code.UI
         {
             // Still need to do some math here
             OverwritePreviousScore(newScore);
+
+            if (_scoreValue.Value > _highScoreValue.Value)
+            {
+                _highScoreValue.Value = _scoreValue.Value;
+            }
         }
 
         private void OverwritePreviousScore(int eventValue)

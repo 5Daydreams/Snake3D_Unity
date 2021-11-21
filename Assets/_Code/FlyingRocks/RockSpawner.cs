@@ -7,7 +7,6 @@ namespace _Code.FlyingRocks
     public class RockSpawner : MonoBehaviour
     {
         [SerializeField] private bool _enableGizmo;
-        [SerializeField] private Vector3 _centerPos;
         [SerializeField] private Vector3 _movementDirection;
         [SerializeField] private StraightLineMovement _rockPrefab;
         private BoundingBox _boundingBox;

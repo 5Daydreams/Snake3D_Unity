@@ -23,6 +23,23 @@ namespace _Code.Geometry
             return randomizedPosition;
         }
 
+        public bool ContainsVector(Vector3 position)
+        {
+            Vector3 min = this.transform.position + _centerPos - _size * 0.5f;
+            Vector3 max = this.transform.position + _centerPos + _size * 0.5f;
+
+            bool withinX = position.x >= min.x && position.x <= max.x;
+            bool withinY = position.y >= min.y && position.y <= max.y;
+            bool withinZ = position.z >= min.z && position.z <= max.z;
+
+            if (!withinX || !withinY || !withinZ)
+            {
+                return false;
+            }
+            
+            return true;
+        }
+
         private void OnDrawGizmos()
         {
             if (!_enableGizmo)

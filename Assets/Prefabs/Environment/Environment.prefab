@@ -600,6 +600,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400410154}
+  - component: {fileID: 7428916273673609282}
+  - component: {fileID: 8546098822433116402}
+  - component: {fileID: 158586268805318507}
   m_Layer: 0
   m_Name: RockDeletionWalls
   m_TagString: Untagged
@@ -627,6 +630,65 @@ Transform:
   m_Father: {fileID: 7775276992489188311}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7428916273673609282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400410153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c776527ab4f74675afdba7555ff914e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _centerPos: {x: 0, y: 0, z: 0}
+  _size: {x: 150, y: 150, z: 150}
+  _enableGizmo: 0
+--- !u!114 &8546098822433116402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400410153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71e08250ca747e0bf3650af225253cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyOnOutOfBounds: 1
+  _callback:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &158586268805318507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400410153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca951c3ac21aced438a57ab7704ebe05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 1c342cb3316fd5d4e927365b8e5d2564, type: 2}
+  UnityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8546098822433116402}
+        m_TargetAssemblyTypeName: _Code.FlyingRocks.DetectObjectOutOfBounds, Assembly-CSharp
+        m_MethodName: SubscribeToBoundary
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1750657416
 GameObject:
   m_ObjectHideFlags: 0

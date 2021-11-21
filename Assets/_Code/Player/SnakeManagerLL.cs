@@ -50,6 +50,8 @@ namespace _Code.Player
                 }
             }
 
+            _snakeSize.Value = _snakeBody.Count;
+
             if (_snakeBody.Count == 0)
             {
                 // Not necessary - snake is dead if count == 0 though
