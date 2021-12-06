@@ -1,9 +1,9 @@
 # SnakeGameAlgorithms
  
 Nelson Kiyoshi Kossuga
-A 3D snake game with apple-powered-powerups and flying rocks in an asteroid fashion.
+. A 3D snake game with apple-powered-powerups and flying rocks in an asteroid fashion.
 
-Patterns:
+# Patterns:
 - Observer, used:
  1. in `BuffClockManager.cs` with `TrackableFloat.cs` being the value observed in the UI;
  2. in `BaseGameEventListener.cs`, `BaseGameEvent.cs` and `IGameEventListener.cs` as a system to manually send events between objects; 
