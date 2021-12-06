@@ -1,7 +1,7 @@
 # SnakeGameAlgorithms
  
 Nelson Kiyoshi Kossuga
-. A 3D snake game with apple-powered-powerups and flying rocks in an asteroid fashion.
+* A 3D snake game with apple-powered-powerups and flying rocks in an asteroid fashion.
 
 # Patterns:
 - Observer, used:
