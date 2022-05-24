@@ -9,3 +9,6 @@ Red and green apples are worth very few points, while golden apples are worth th
 Here is some short gameplay footage:
 
 ![3E7xi017T7](https://user-images.githubusercontent.com/49330163/170135292-4622a509-1de4-4aa2-9f0c-ed07508f7db7.gif)
+
+![xTeCDkbgEm](https://user-images.githubusercontent.com/49330163/170141937-ad3f4370-b821-49dd-926f-01b92caf9a5a.gif)
+
