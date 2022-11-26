@@ -1,4 +1,4 @@
-# SnakeGameAlgorithms
+# Snake3D_Unity
  
 A 3D Snake game which I made during my time in Futuregames, initially for our course on algorithms and data structures, and later on for an assignement on Design Patterns.
 
