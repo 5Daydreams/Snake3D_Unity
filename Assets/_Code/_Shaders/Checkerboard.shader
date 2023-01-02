@@ -65,4 +65,5 @@ Shader "Unlit/Checkerboard"
             ENDCG
         }
     }
+    Fallback "Standard"
 }

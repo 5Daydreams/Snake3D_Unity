@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43667638, g: 0.48427182, b: 0.5645251, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -300,8 +300,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.23869798, g: 0.26592773, b: 0.29799998, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1153,6 +1153,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 670134404923268566, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.161
+      objectReference: {fileID: 0}
+    - target: {fileID: 670134404923268566, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.161
+      objectReference: {fileID: 0}
+    - target: {fileID: 670134404923268566, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.161
+      objectReference: {fileID: 0}
     - target: {fileID: 3832336547250444326, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1260,6 +1272,18 @@ PrefabInstance:
     - target: {fileID: 4905542779130321638, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
       propertyPath: m_Name
       value: IngameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997611870872248096, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997611870872248096, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997611870872248096, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 5510536161957689399, guid: dd5fd02159e64de498cc1fb18ff4ffc7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1485,6 +1509,10 @@ PrefabInstance:
       propertyPath: _enableGizmo
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 705507993, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 757721762, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1500,6 +1528,18 @@ PrefabInstance:
     - target: {fileID: 1368400747, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750657417, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6455589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750657417, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7969161
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750657417, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
       objectReference: {fileID: 0}
     - target: {fileID: 6970567397565820452, guid: c4300f6ed7cc8664d86d5ba51c4e3f70, type: 3}
       propertyPath: _enableGizmo
