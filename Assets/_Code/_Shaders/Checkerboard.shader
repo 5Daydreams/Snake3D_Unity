@@ -11,7 +11,7 @@ Shader "Unlit/Checkerboard"
     {
         Tags
         {
-            "RenderType"="Opaque" "Queue" = "Transparent"
+            "RenderType"="Opaque" "Queue" = "Geometry"
         }
         
         Blend SrcAlpha OneMinusSrcAlpha
